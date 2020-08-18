@@ -203,6 +203,9 @@ export default function WebsiteIntro(props) {
             font-size: 8vw;
             line-height: 9.5vw;
           }
+          .main-loading-text:not(:last-child) {
+            margin-bottom: 0.5rem;
+          }
         }
       `}</style>
       <div className="loading-page">
