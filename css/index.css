@@ -1,0 +1,34 @@
+/* @import 'modul.css'; */
+
+@font-face {
+  font-family: "Playkidos";
+  src: url("/fonts/Queental-Regular.ttf");
+}
+
+:root {
+  --classic-blue: #0f4c81;
+  --turqoise: #53b0ae;
+}
+
+html {
+  text-transform: uppercase;
+  font-family: "Playkidos", cursive;
+  letter-spacing: 0.25rem;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+}
+
+.height-0 {
+  height: 0;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
