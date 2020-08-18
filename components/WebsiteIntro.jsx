@@ -5,6 +5,10 @@ export default function WebsiteIntro() {
     const el = document.querySelector(selectorString);
     el.classList.add(className);
   };
+  const removeClass = (selectorString, className) => {
+    const el = document.querySelector(selectorString);
+    el.classList.remove(className);
+  };
   useEffect(() => {
     // TODO: disable scrolling
     setTimeout(function () {
@@ -22,6 +26,9 @@ export default function WebsiteIntro() {
     setTimeout(function () {
       addClass(".loading-side-move", "loading-move-left");
     }, 2300);
+    setTimeout(function () {
+      addClass(".main-loading-text.four", "opacity-0");
+    }, 4250);
   }, []);
   return (
     <>
@@ -116,11 +123,10 @@ export default function WebsiteIntro() {
         }
 
         .loading-move-left {
-          -webkit-transform: translate(-45%, 0px);
-          -ms-transform: translate(-45%, 0px);
-          transform: translate(-45%, 0px);
+          -webkit-transform: translate(-42%, 0px);
+          -ms-transform: translate(-42%, 0px);
+          transform: translate(-42%, 0px);
         }
-
         @media screen and (max-width: 991px) {
           .main-loading-text {
             font-size: 3.8vw;
