@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Header } from ".";
 
 export default function WebsiteIntro() {
   const addClass = (selectorString, className) => {
@@ -29,12 +30,16 @@ export default function WebsiteIntro() {
     setTimeout(function () {
       addClass(".main-loading-text.four", "opacity-0");
     }, 4250);
+    setTimeout(function () {
+      removeClass(".outer-wrapper", "moved-down");
+    }, 4500);
   }, []);
   return (
     <>
       <style jsx>{`
         .loading-page,
-        .loading-page-inner {
+        .loading-page-inner,
+        .outer-wrapper {
           left: 0;
           top: 0;
           right: auto;
@@ -90,6 +95,13 @@ export default function WebsiteIntro() {
           transition: opacity 0.5s ease;
         }
 
+        .outer-wrapper {
+          display: flex;
+          width: 100vw;
+          min-height: 100vh;
+          flex-direction: column;
+        }
+
         .loading-side-move {
           position: relative;
           display: -webkit-flex;
@@ -127,6 +139,17 @@ export default function WebsiteIntro() {
           -ms-transform: translate(-42%, 0px);
           transform: translate(-42%, 0px);
         }
+        .moved-down {
+          transform: translate(0, 100%);
+        }
+        .outer-wrapper {
+          background: #fff;
+          width: 100%;
+          height: 100%;
+          -webkit-transition: transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+          transition: transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
         @media screen and (max-width: 991px) {
           .main-loading-text {
             font-size: 3.8vw;
@@ -164,6 +187,10 @@ export default function WebsiteIntro() {
             <div className="main-loading-text three">a move</div>
             <div className="main-loading-text four">ahead</div>
           </div>
+        </div>
+        <div className="outer-wrapper moved-down">
+          <Header />
+          <p className="">Haida</p>
         </div>
       </div>
     </>
