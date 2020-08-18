@@ -10,6 +10,10 @@
   --turqoise: #53b0ae;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   text-transform: uppercase;
   font-family: "Playkidos", cursive;
@@ -25,10 +29,131 @@ body {
   background-color: #fff;
 }
 
+header {
+  height: 5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  /* box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.5); */
+  position: relative;
+}
+.header__navigation {
+  position: fixed;
+  background-color: #fff;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: 50% 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.45s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+header,
+header > div {
+  transition: opacity 0.45s;
+  opacity: 1;
+}
+.header__navigation--open {
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+  z-index: 999999;
+}
+.fullscreen-wrapper {
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
+  margin: 1.5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.main-page {
+  /* background: #ccc; */
+  min-height: 100%;
+}
+.menu__full {
+  background: black;
+  color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+}
+.menu__content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.menu__content--show {
+  opacity: 1;
+}
+
+.header-left,
+.header-right {
+  min-width: 64px;
+}
+.header-center {
+  flex-grow: 1;
+}
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+}
 .height-0 {
   height: 0;
 }
 
 .opacity-0 {
   opacity: 0;
+}
+
+.burger {
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: all 0.7s ease-in-out;
+  transform-origin: 50% 50%;
+}
+.burger span {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 10px;
+  background-color: black;
+}
+.burger span:not(:last-child) {
+  margin-bottom: 10px;
+}
+.burger span:first-child,
+.burger span:nth-child(2),
+.burger span:last-child {
+  top: 0;
+  transform: rotate(0deg);
+  transition: 0.4s ease-in-out;
+}
+.burger.active {
+  position: relative;
+  transform: rotate(360deg);
+  transform-origin: 50% 50%;
+  transition: all 0.4s ease-in-out;
+}
+.burger.active span {
+  background-color: white;
+}
+.burger.active span:first-child {
+  top: 4px;
+  transform: rotate(45deg);
+  transition: 0.4s ease-in-out;
+}
+.burger.active span:nth-child(2) {
+  display: none;
+  /* top: 1.666666666px; */
+  transform: rotate(-45deg);
+  transition: 0.4s ease-in-out;
+}
+.burger.active span:last-child {
+  top: -16px;
+  transform: rotate(-45deg);
+  transition: 0.4s ease-in-out;
 }
