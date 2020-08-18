@@ -1,3 +1,5 @@
+// TODO: add favicons
+
 import React from "react";
 
 const FavIcon = () => (
