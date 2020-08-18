@@ -1,15 +1,8 @@
 import { useEffect } from "react";
 import { Header } from ".";
+import { addClass, removeClass } from "../helpers/functions";
 
 export default function WebsiteIntro() {
-  const addClass = (selectorString, className) => {
-    const el = document.querySelector(selectorString);
-    el.classList.add(className);
-  };
-  const removeClass = (selectorString, className) => {
-    const el = document.querySelector(selectorString);
-    el.classList.remove(className);
-  };
   useEffect(() => {
     // TODO: disable scrolling
     setTimeout(function () {
