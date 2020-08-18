@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Header } from ".";
+import { Header, MainPage } from ".";
 import { addClass, removeClass } from "../helpers/functions";
 
 export default function WebsiteIntro(props) {
@@ -175,7 +175,12 @@ export default function WebsiteIntro(props) {
           -webkit-transition: transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
           transition: transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
         }
-
+        .main-page {
+          background: #f2f2f2;
+          min-height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
         @media screen and (max-width: 991px) {
           .main-loading-text {
             font-size: 3.8vw;
@@ -221,6 +226,7 @@ export default function WebsiteIntro(props) {
           <div className="fullscreen-wrapper">
             <div className="main-page">
               <Header withAnimation={introOut} />
+              <MainPage withAnimation={introOut} />
               {/* <p className="">Haida</p> */}
             </div>
           </div>

@@ -84,10 +84,7 @@ header > div {
     height: calc(100% - 1rem);
   }
 }
-.main-page {
-  /* background: #ccc; */
-  min-height: 100%;
-}
+
 .menu__full {
   background: black;
   color: white;
