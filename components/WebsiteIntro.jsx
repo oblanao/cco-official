@@ -6,59 +6,63 @@ export default function WebsiteIntro(props) {
   const { debug } = props;
   const [introOut, setIntroOut] = useState(false);
   useEffect(() => {
-    // TODO: disable scrolling
-    setTimeout(
-      function () {
-        addClass(".main-loading-text.one", "opacity-0");
-      },
-      debug ? 0 : 2300
-    );
-    setTimeout(
-      function () {
-        addClass(".main-loading-text.two", "opacity-0");
-      },
-      debug ? 0 : 2550
-    );
-    setTimeout(
-      function () {
-        addClass(".main-loading-text.three", "opacity-0");
-      },
-      debug ? 0 : 2800
-    );
-    setTimeout(
-      function () {
-        addClass(".loading-page", "height-0");
-      },
-      debug ? 0 : 4000
-    );
-    setTimeout(
-      function () {
-        addClass(".loading-side-move", "loading-move-left");
-      },
-      debug ? 0 : 2300
-    );
-    setTimeout(
-      function () {
-        addClass(".main-loading-text.four", "opacity-0");
-      },
-      debug ? 0 : 4250
-    );
-    setTimeout(
-      function () {
-        removeClass(".outer-wrapper", "moved-down");
-      },
-      debug ? 0 : 4500
-    );
-    setTimeout(
-      function () {
-        const intro = document.querySelector(".loading-page-inner");
-        setIntroOut(true);
-        if (intro) {
-          intro.remove();
-        }
-      },
-      debug ? 0 : 5250
-    );
+    if (props.showIntro) {
+      // TODO: disable scrolling
+      setTimeout(
+        function () {
+          addClass(".main-loading-text.one", "opacity-0");
+        },
+        debug ? 0 : 2300
+      );
+      setTimeout(
+        function () {
+          addClass(".main-loading-text.two", "opacity-0");
+        },
+        debug ? 0 : 2550
+      );
+      setTimeout(
+        function () {
+          addClass(".main-loading-text.three", "opacity-0");
+        },
+        debug ? 0 : 2800
+      );
+      setTimeout(
+        function () {
+          addClass(".loading-page", "height-0");
+        },
+        debug ? 0 : 4000
+      );
+      setTimeout(
+        function () {
+          addClass(".loading-side-move", "loading-move-left");
+        },
+        debug ? 0 : 2300
+      );
+      setTimeout(
+        function () {
+          addClass(".main-loading-text.four", "opacity-0");
+        },
+        debug ? 0 : 4250
+      );
+      setTimeout(
+        function () {
+          removeClass(".outer-wrapper", "moved-down");
+        },
+        debug ? 0 : 4500
+      );
+      setTimeout(
+        function () {
+          const intro = document.querySelector(".loading-page-inner");
+          setIntroOut(true);
+          if (intro) {
+            intro.remove();
+          }
+        },
+        debug ? 0 : 5250
+      );
+    } else {
+      setIntroOut(true);
+    }
   }, []);
   return (
     <>
@@ -214,15 +218,15 @@ export default function WebsiteIntro(props) {
         }
       `}</style>
       <div className="loading-page">
-        <div className="loading-page-inner">
+        {/* <div className="loading-page-inner">
           <div className="loading-side-move">
             <div className="main-loading-text one">Chess Coders</div>
             <div className="main-loading-text two">keeps you</div>
             <div className="main-loading-text three">a move</div>
             <div className="main-loading-text four">ahead</div>
           </div>
-        </div>
-        <div className="outer-wrapper moved-down">
+        </div> */}
+        <div className="outer-wrapper ">
           <div className="fullscreen-wrapper">
             <div className="main-page">
               <Header withAnimation={introOut} />
