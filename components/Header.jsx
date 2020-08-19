@@ -94,7 +94,7 @@ export default function Header(props) {
       `}</style>
       <header className={animated ? "opacity-1" : "opacity-0"}>
         <div className="header-left">
-          <img src="/images/logo-black-64.png" alt="logo-cco" height="64" />
+          <img src="/images/logo-color-64.png" alt="logo-cco" height="64" />
         </div>
         <div className="header-center"></div>
         <div className="header-right">

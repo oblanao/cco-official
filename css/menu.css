@@ -85,8 +85,7 @@
   visibility: hidden;
   top: 50%;
   margin-top: 20px;
-  -webkit-transform: translate(0%, -50%);
-  transform: translate(0%, -50%);
+  transform: translateY(-50%);
   width: 100%;
   text-align: center;
 }
@@ -102,7 +101,7 @@
   -webkit-transition-delay: 0.8s;
   transition-delay: 0.8s;
   opacity: 0;
-  text-align: center;
+  /* text-align: center; */
   color: #53b0ae;
   overflow: hidden;
   font-size: 8vh;
@@ -128,6 +127,7 @@ ul > .nav__list-item:not(:last-child) {
   color: rgba(235, 235, 235, 0.8);
   overflow: hidden;
   cursor: pointer;
+  text-align: center;
   padding-left: 5px;
   padding-right: 5px;
   font-weight: 900;
@@ -255,4 +255,16 @@ body.nav-active .menu-logo {
   ul > .nav__list-item:not(:last-child) {
     margin-bottom: 2.5rem;
   }
+}
+
+.nav__container {
+  display: flex;
+  margin: 0 40px;
+}
+.nav__container-left {
+  flex-grow: 1;
+}
+
+.nav__container-right {
+  min-width: 300px;
 }
