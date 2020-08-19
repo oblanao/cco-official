@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import MenuItem from "./MenuItem";
+import CircleCTA from "./CircleCTA";
 
 export default function WebsiteMenu(props) {
   useEffect(() => {
@@ -40,6 +40,8 @@ export default function WebsiteMenu(props) {
         </div>
       </div>
       <div className="nav">
+        <CircleCTA />
+
         <div className="nav__content">
           <ul className="nav__list">
             <li className="nav__list-item active-nav">

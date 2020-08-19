@@ -1,5 +1,4 @@
 import WebsiteMenu from "./Menu";
-import { useState } from "react";
 
 export default function Header(props) {
   //TODO: de cacat animatia la buton, in primul rand nu ramane opacity-0 nu stiu de ce pula mea
@@ -21,11 +20,12 @@ export default function Header(props) {
       // setMenuOpen(true);
     }
   };
+  const bgColor = !animated ? "#fff" : "#f2f2f2";
   return (
     <>
       <style jsx>{`
         header {
-          background: #f2f2f2;
+          background: ${bgColor};
           padding: 20px;
           display: flex;
           align-items: center;
@@ -93,7 +93,7 @@ export default function Header(props) {
           justify-content: flex-end;
         }
       `}</style>
-      <header className={animated ? "opacity-1" : "opacity-0"}>
+      <header className={animated ? "opacity-0" : "opacity-1"}>
         <div className="header-left">
           <img src="/images/logo-color-64.png" alt="logo-cco" height="64" />
         </div>

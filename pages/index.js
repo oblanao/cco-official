@@ -11,7 +11,7 @@ export default function Index() {
           width: "100vw",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "black",
+          backgroundColor: "red",
         }}
       >
         <Test />

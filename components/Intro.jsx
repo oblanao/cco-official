@@ -69,6 +69,8 @@ export default function Intro(props) {
         }
 
         .main-inner {
+          letter-spacing: 0.25rem;
+
           left: 0;
           top: 0;
           right: auto;
