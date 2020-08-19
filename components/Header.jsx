@@ -25,6 +25,7 @@ export default function Header(props) {
     <>
       <style jsx>{`
         header {
+          background: #f2f2f2;
           padding: 20px;
           display: flex;
           align-items: center;

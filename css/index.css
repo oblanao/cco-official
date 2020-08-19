@@ -37,3 +37,31 @@ body {
 .opacity-0 {
   opacity: 0;
 }
+
+.main-page > .content {
+  margin-bottom: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-align: justify;
+  transition: opacity 0.5s ease-in;
+  padding: 1rem;
+  background: #f2f2f2;
+}
+.content h2 {
+  font-size: 4rem;
+  margin: 1rem auto;
+}
+.content.full-screen {
+  height: calc(100vh - 64px - 5rem);
+}
+@media (max-width: 491px) {
+  .content.full-screen {
+    height: calc(100vh - 64px - 2rem);
+  }
+}

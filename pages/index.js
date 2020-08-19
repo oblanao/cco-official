@@ -3,7 +3,7 @@ import { Test, WebsiteHome } from "../components";
 export default function Index() {
   return (
     <>
-      <WebsiteHome showIntro={true} />
+      <WebsiteHome showIntro={false} />
       {/* <div
         style={{
           display: "flex",
