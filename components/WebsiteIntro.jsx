@@ -26,7 +26,7 @@ export default function WebsiteIntro(props) {
     );
     setTimeout(
       function () {
-        addClass(".loading-page", "height-0");
+        addClass(".main", "height-0");
       },
       debug ? 0 : 4000
     );
@@ -50,7 +50,7 @@ export default function WebsiteIntro(props) {
     );
     setTimeout(
       function () {
-        const intro = document.querySelector(".loading-page-inner");
+        const intro = document.querySelector(".main-inner");
         setIntroOut(true);
         if (intro) {
           intro.remove();
@@ -59,24 +59,22 @@ export default function WebsiteIntro(props) {
       debug ? 0 : 5250
     );
   };
+  const skipToSite = () => {
+    setIntroOut(true);
+  };
   useEffect(() => {
     if (showIntro) {
       // TODO: disable scrolling
       playIntro(debug);
     } else {
-      removeClass(".outer-wrapper", "moved-down");
-      const intro = document.querySelector(".loading-page-inner");
-      setIntroOut(true);
-      if (intro) {
-        intro.remove();
-      }
+      skipToSite();
     }
   }, []);
   return (
     <>
       <style jsx>{`
-        .loading-page,
-        .loading-page-inner,
+        .main,
+        .main-inner,
         .outer-wrapper {
           left: 0;
           top: 0;
@@ -84,7 +82,7 @@ export default function WebsiteIntro(props) {
           bottom: auto;
         }
 
-        .loading-page {
+        .main {
           background-color: #000;
           position: fixed;
           z-index: 9999999999;
@@ -111,7 +109,7 @@ export default function WebsiteIntro(props) {
             height 1.25s cubic-bezier(0.86, 0, 0.07, 1);
         }
 
-        .loading-page-inner {
+        .main-inner {
           -webkit-box-direction: normal;
           -webkit-box-orient: vertical;
           position: absolute;
@@ -206,7 +204,7 @@ export default function WebsiteIntro(props) {
             -ms-transform: translate(0px, -38%);
             transform: translate(0px, -38%);
           }
-          .loading-page-inner {
+          .main-inner {
             height: 100%;
           }
           .loading-side-move {
@@ -225,7 +223,7 @@ export default function WebsiteIntro(props) {
           }
         }
       `}</style>
-      <div className="loading-page">
+      <div className="main">
         {showIntro && (
           <div className="loading-page-inner">
             <div className="loading-side-move">
@@ -236,7 +234,10 @@ export default function WebsiteIntro(props) {
             </div>
           </div>
         )}
-        <div className="outer-wrapper moved-down">
+        <div
+          className={showIntro ? "outer-wrapper moved-down" : "outer-wrapper"}
+          // element should not start with .moved-down, because of animation duration
+        >
           <div className="fullscreen-wrapper">
             <div className="main-page">
               <Header withAnimation={introOut} />
