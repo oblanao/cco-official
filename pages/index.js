@@ -4,7 +4,7 @@ export default function Index() {
   return (
     <>
       {/* <AnimationTest /> */}
-      <WebsiteIntro showIntro={true} debug={false} />
+      <WebsiteIntro showIntro={false} debug={false} />
     </>
   );
 }
