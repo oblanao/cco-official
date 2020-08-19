@@ -4,6 +4,7 @@ import { addClass, removeClass } from "../helpers/functions";
 export default function Intro(props) {
   const { debug, callback } = props;
   useEffect(() => {
+    // TODO: disable scrolling
     setTimeout(
       function () {
         addClass(".main-loading-text.one", "opacity-0");
@@ -22,12 +23,6 @@ export default function Intro(props) {
       },
       debug ? 0 : 2800
     );
-    // setTimeout(
-    //   function () {
-    //     addClass(".main", "height-0");
-    //   },
-    //   debug ? 0 : 4000
-    // );
     setTimeout(
       function () {
         addClass(".loading-side-move", "loading-move-left");
@@ -44,22 +39,6 @@ export default function Intro(props) {
       },
       debug ? 0 : 4250
     );
-    // setTimeout(
-    //   function () {
-    //     removeClass(".outer-wrapper", "moved-down");
-    //   },
-    //   debug ? 0 : 4500
-    // );
-    // setTimeout(
-    //   function () {
-    //     const intro = document.querySelector(".main-inner");
-    //     setIntroOut(true);
-    //     if (intro) {
-    //       intro.remove();
-    //     }
-    //   },
-    //   debug ? 0 : 5250
-    // );
   });
   return (
     <>
