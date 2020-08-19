@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Header, MainPage } from ".";
 import { addClass, removeClass } from "../helpers/functions";
 import Intro from "./Intro";
+import Fullscreen from "./Fullscreen";
 
 export default function WebsiteHome(props) {
   const { debug, showIntro } = props;
@@ -114,12 +115,12 @@ export default function WebsiteHome(props) {
           className={showIntro ? "outer-wrapper moved-down" : "outer-wrapper"}
           // element should not start with .moved-down, because of animation duration
         >
-          <div className="fullscreen-wrapper">
+          <Fullscreen>
             <div className="main-page">
               <Header withAnimation={introOut} />
               <MainPage withAnimation={introOut} />
             </div>
-          </div>
+          </Fullscreen>
         </div>
       </div>
     </>
