@@ -1,52 +1,80 @@
 import { useEffect, useState } from "react";
 import { Header, MainPage } from ".";
 import { addClass, removeClass } from "../helpers/functions";
+import Intro from "./Intro";
 
-export default function WebsiteIntro(props) {
+export default function WebsiteHome(props) {
   const { debug, showIntro } = props;
   const [introOut, setIntroOut] = useState(false);
-  const playIntro = (debug) => {
-    setTimeout(
-      function () {
-        addClass(".main-loading-text.one", "opacity-0");
-      },
-      debug ? 0 : 2300
-    );
-    setTimeout(
-      function () {
-        addClass(".main-loading-text.two", "opacity-0");
-      },
-      debug ? 0 : 2550
-    );
-    setTimeout(
-      function () {
-        addClass(".main-loading-text.three", "opacity-0");
-      },
-      debug ? 0 : 2800
-    );
-    setTimeout(
-      function () {
-        addClass(".main", "height-0");
-      },
-      debug ? 0 : 4000
-    );
-    setTimeout(
-      function () {
-        addClass(".loading-side-move", "loading-move-left");
-      },
-      debug ? 0 : 2300
-    );
-    setTimeout(
-      function () {
-        addClass(".main-loading-text.four", "opacity-0");
-      },
-      debug ? 0 : 4250
-    );
+  // const playIntro = (debug) => {
+  //   setTimeout(
+  //     function () {
+  //       addClass(".main-loading-text.one", "opacity-0");
+  //     },
+  //     debug ? 0 : 2300
+  //   );
+  //   setTimeout(
+  //     function () {
+  //       addClass(".main-loading-text.two", "opacity-0");
+  //     },
+  //     debug ? 0 : 2550
+  //   );
+  //   setTimeout(
+  //     function () {
+  //       addClass(".main-loading-text.three", "opacity-0");
+  //     },
+  //     debug ? 0 : 2800
+  //   );
+  //   setTimeout(
+  //     function () {
+  //       addClass(".main", "height-0");
+  //     },
+  //     debug ? 0 : 4000
+  //   );
+  //   setTimeout(
+  //     function () {
+  //       addClass(".loading-side-move", "loading-move-left");
+  //     },
+  //     debug ? 0 : 2300
+  //   );
+  //   setTimeout(
+  //     function () {
+  //       addClass(".main-loading-text.four", "opacity-0");
+  //     },
+  //     debug ? 0 : 4250
+  //   );
+  //   setTimeout(
+  //     function () {
+  //       removeClass(".outer-wrapper", "moved-down");
+  //     },
+  //     debug ? 0 : 4500
+  //   );
+  //   setTimeout(
+  //     function () {
+  //       const intro = document.querySelector(".main-inner");
+  //       setIntroOut(true);
+  //       if (intro) {
+  //         intro.remove();
+  //       }
+  //     },
+  //     debug ? 0 : 5250
+  //   );
+  // };
+  const hideIntroShowSite = () => {
+    addClass(".main", "height-0");
+    const intro = document.querySelector(".main-inner");
+    setIntroOut(true);
+    if (intro) {
+      intro.remove();
+    }
+    setIntroOut(true);
+  };
+  const onIntroFinished = () => {
     setTimeout(
       function () {
         removeClass(".outer-wrapper", "moved-down");
       },
-      debug ? 0 : 4500
+      debug ? 0 : 100
     );
     setTimeout(
       function () {
@@ -56,20 +84,21 @@ export default function WebsiteIntro(props) {
           intro.remove();
         }
       },
-      debug ? 0 : 5250
+      debug ? 0 : 850
+    );
+    setTimeout(
+      function () {
+        addClass(".main", "height-0");
+      },
+      debug ? 0 : 4000
     );
   };
-  const skipToSite = () => {
-    setIntroOut(true);
-  };
   useEffect(() => {
-    if (showIntro) {
+    if (!showIntro) {
       // TODO: disable scrolling
-      playIntro(debug);
-    } else {
-      skipToSite();
+      hideIntroShowSite();
     }
-  }, []);
+  }, [props.showIntro]);
   return (
     <>
       <style jsx>{`
@@ -225,14 +254,15 @@ export default function WebsiteIntro(props) {
       `}</style>
       <div className="main">
         {showIntro && (
-          <div className="loading-page-inner">
-            <div className="loading-side-move">
-              <div className="main-loading-text one">Chess Coders</div>
-              <div className="main-loading-text two">keeps you</div>
-              <div className="main-loading-text three">a move</div>
-              <div className="main-loading-text four">ahead</div>
-            </div>
-          </div>
+          <Intro debug={debug} callback={onIntroFinished} />
+          // <div className="loading-page-inner">
+          //   <div className="loading-side-move">
+          //     <div className="main-loading-text one">Chess Coders</div>
+          //     <div className="main-loading-text two">keeps you</div>
+          //     <div className="main-loading-text three">a move</div>
+          //     <div className="main-loading-text four">ahead</div>
+          //   </div>
+          // </div>
         )}
         <div
           className={showIntro ? "outer-wrapper moved-down" : "outer-wrapper"}

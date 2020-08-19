@@ -1,10 +1,10 @@
-import WebsiteIntro from "../components/WebsiteIntro";
+import { WebsiteHome } from "../components";
 
 export default function Index() {
   return (
     <>
       {/* <AnimationTest /> */}
-      <WebsiteIntro showIntro={false} debug={false} />
+      <WebsiteHome showIntro={true} debug={false} />
     </>
   );
 }
