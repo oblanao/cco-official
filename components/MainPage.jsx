@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Fullscreen, Header } from ".";
 
 export default function MainPage(props) {
   useEffect(() => {
@@ -9,6 +10,12 @@ export default function MainPage(props) {
   return (
     <>
       <style jsx>{`
+        .main-page {
+          background: #f2f2f2;
+          min-height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
         .content {
           display: flex;
           flex-direction: column;
@@ -24,10 +31,15 @@ export default function MainPage(props) {
           margin: 1rem auto;
         }
       `}</style>
-      <div className="content opacity-0">
-        <h2>CHESS CODERS</h2>
-        <h4>Always a move ahead</h4>
-      </div>
+      <Fullscreen>
+        <div className="main-page">
+          <Header withAnimation={props.withAnimation} />
+          <div className="content opacity-0">
+            <h2>CHESS CODERS</h2>
+            <h4>Always a move ahead</h4>
+          </div>
+        </div>
+      </Fullscreen>
     </>
   );
 }

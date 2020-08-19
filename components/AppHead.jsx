@@ -10,6 +10,7 @@ const AppHead = () => {
       <title>{sitename}</title>
       <meta name="description" content={description} />
       {googleFonts && <link rel="stylesheet" href={googleFonts} />}
+      <script src="https://unpkg.com/scrollreveal"></script>
       <FavIcon />
       <OpenGraph />
     </Head>
