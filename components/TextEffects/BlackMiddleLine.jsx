@@ -40,8 +40,8 @@ export default function BlackMiddleLine(props) {
           font-weight: bold;
           cursor: ${props.onClick ? "pointer" : "normal"};
           padding: 1rem;
-          border-left: 1px solid #000;
-          border-right: 1px solid #000;
+          border-left: 1px solid black;
+          border-right: 1px solid black;
           position: relative;
           margin: auto 1rem;
           transition: opacity 0.75s ease-in;
@@ -56,7 +56,7 @@ export default function BlackMiddleLine(props) {
           right: 0;
           height: 1px;
           background: #6d0300;
-          transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+          transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
         }
         .black-middle-line__container::before {
           right: calc(100% - 15px);
@@ -73,7 +73,7 @@ export default function BlackMiddleLine(props) {
           right: 0;
           height: 1px;
           background: #6d0300;
-          transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+          transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
         }
         .last-line::before {
           right: calc(100% - 15px);
@@ -101,7 +101,7 @@ export default function BlackMiddleLine(props) {
           align-items: center;
         }
         .black-line.animated > div {
-          animation: bgChange 0.75s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+          animation: bgChangeLeft 0.75s cubic-bezier(0.51, 0.92, 0.24, 1.15);
           animation-fill-mode: forwards;
         }
         .black-text {
@@ -122,7 +122,7 @@ export default function BlackMiddleLine(props) {
         .black-middle-line__container:hover .last-line::after {
           left: calc(62% + 5px);
         }
-        @keyframes bgChange {
+        @keyframes bgChangeLeft {
           from {
             background: linear-gradient(
               to right,

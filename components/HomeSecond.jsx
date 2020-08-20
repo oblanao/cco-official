@@ -40,7 +40,8 @@ export default function HomeSecond(props) {
         }
         .content-home-second .content-title {
           margin-bottom: 5rem;
-          transition: opacity 0.75s ease-in;
+          transition-delay: 0.25s;
+          transition: opacity 0.6s ease-in;
         }
         @media (max-width: 991px) {
           .content-home-second {
