@@ -7,11 +7,13 @@ export default function HomeSecond(props) {
   const [topOffset, setOffset] = useState(0);
   const [isVisible, setVisible] = useState(false);
   useEffect(() => {
-    const offset = isMobile() ? 50 : 350;
+    console.log("isMobile? ", isMobile());
+    const offset = isMobile() ? 0 : 350;
     console.log(offset);
     setOffset(offset);
   }, []);
   const handleScroll = (isVisible) => {
+    console.log("ande");
     if (isVisible) {
       const el = document.querySelector(".content-title");
       el.classList.remove("opacity-0");
@@ -56,7 +58,11 @@ export default function HomeSecond(props) {
             bottom: topOffset,
           }}
         >
-          <h2 className="content-title opacity-0">OUR SERVICES</h2>
+          <h2
+            className={isMobile() ? "content-title" : "content-title opacity-0"}
+          >
+            OUR SERVICES
+          </h2>
         </VisibilitySensor>
         <div className="services-container">
           <BlackMiddleLine
@@ -67,7 +73,7 @@ export default function HomeSecond(props) {
             bgColor="transparent"
             onClick={console.log}
             id="1"
-            startAnimation={isVisible}
+            startAnimation={isVisible || isMobile()}
           />
           <BlackMiddleLine
             // firstLine="Let's"

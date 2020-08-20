@@ -75,6 +75,9 @@ body {
   .content.full-screen {
     min-height: calc(100vh - 64px - 2rem);
   }
+  .content h2 {
+    font-size: 3rem;
+  }
 }
 .col-50 {
   height: 100%;
