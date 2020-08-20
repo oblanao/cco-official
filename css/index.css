@@ -57,6 +57,7 @@ body {
   transition: opacity 0.5s ease-in;
   padding: 1rem;
   flex-direction: row;
+  text-align: center;
 }
 .content-landing {
   flex-direction: column;

@@ -27,9 +27,10 @@ export default function HomeSecond(props) {
           background: #f2f2f2;
           color: black;
           flex-direction: column;
-          padding: 5rem 0;
+          padding: 5rem 1rem;
           font-family: "Queental";
-          justify-content: flex-start;
+          justify-content: center;
+          align-items: center;
         }
         .services-container {
           display: flex;
@@ -43,7 +44,10 @@ export default function HomeSecond(props) {
         }
         @media (max-width: 991px) {
           .content-home-second {
-            padding: 2.5rem 0;
+            padding: 2.5rem 1rem;
+          }
+          .content-home-second .content-title {
+            margin-bottom: 2rem;
           }
           .services-container {
             flex-direction: column;
