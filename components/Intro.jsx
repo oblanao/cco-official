@@ -109,7 +109,7 @@ export default function Intro(props) {
         }
         @media screen and (max-width: 991px) {
           .main-loading-text {
-            font-size: 3.8vw;
+            font-size: 3.2vw;
             line-height: 4.7vw;
           }
         }
