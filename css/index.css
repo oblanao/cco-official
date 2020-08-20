@@ -3,7 +3,7 @@
 @import "after-intro.css";
 
 @font-face {
-  font-family: "Playkidos";
+  font-family: "Queental";
   src: url("/fonts/Queental-Regular.ttf");
 }
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap");
@@ -19,7 +19,7 @@
 
 html {
   text-transform: uppercase;
-  font-family: "Playkidos", cursive;
+  font-family: "Queental", cursive;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   height: 100%;
@@ -63,21 +63,17 @@ body {
   background: #f2f2f2;
   letter-spacing: 0.25rem;
 }
-.content-home-second {
-  background: var(--classic-blue);
-  color: white;
-}
 
 .content h2 {
   font-size: 4rem;
   margin: 1rem auto;
 }
 .content.full-screen {
-  height: calc(100vh - 64px - 5rem);
+  min-height: calc(100vh - 64px - 5rem);
 }
 @media (max-width: 491px) {
   .content.full-screen {
-    height: calc(100vh - 64px - 2rem);
+    min-height: calc(100vh - 64px - 2rem);
   }
 }
 .col-50 {

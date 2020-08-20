@@ -11,4 +11,10 @@ const removeClass = (selectorString, className) => {
   }
 };
 
-export { addClass, removeClass };
+const vh = (document) =>
+  Math.max(
+    document.documentElement.clientHeight || 0,
+    window.innerHeight || 0
+  ) / 100;
+
+export { addClass, removeClass, vh };

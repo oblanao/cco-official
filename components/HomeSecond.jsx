@@ -1,16 +1,98 @@
-import { useEffect } from "react";
-import Fade from "react-reveal/Fade";
+import { useState, useEffect } from "react";
+import { BlackMiddleLine } from "./TextEffects";
+import VisibilitySensor from "react-visibility-sensor";
+import { vh } from "../helpers/functions";
 
 export default function HomeSecond(props) {
-  useEffect(() => {}, []);
+  const [topOffset, setOffset] = useState(0);
+  const [isVisible, setVisible] = useState(false);
+  useEffect(() => {
+    const offset = vh(document) * 40;
+    console.log(offset);
+    setOffset(offset);
+  }, []);
+  const handleScroll = (isVisible) => {
+    if (isVisible) {
+      const el = document.querySelector(".content-title");
+      el.classList.remove("opacity-0");
+      setVisible(true);
+    }
+  };
   return (
-    <div className="content content-home-second full-screen after-intro">
-      <Fade top distance={"30px"} delay={200} cascade>
-        <div className="col-left col-50">
-          <img src="/images/icons/chip.png" alt="chip-icon" />
+    <>
+      <style jsx>{`
+        .content-home-second {
+          background: #f2f2f2;
+          color: black;
+          flex-direction: column;
+          padding: 5rem 0;
+          font-family: "Queental";
+          justify-content: flex-start;
+        }
+        .services-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 2rem;
+        }
+        .content-home-second .content-title {
+          margin-bottom: 5rem;
+          transition: opacity 0.75s ease-in;
+        }
+        @media (max-width: 991px) {
+          .content-home-second {
+            padding: 2.5rem 0;
+          }
+          .services-container {
+            flex-direction: column;
+          }
+        }
+      `}</style>
+      <div className="content content-home-second after-intro">
+        <VisibilitySensor
+          onChange={handleScroll}
+          offset={{
+            top: 30,
+            bottom: topOffset,
+          }}
+        >
+          <h2 className="content-title opacity-0">OUR SERVICES</h2>
+        </VisibilitySensor>
+        <div className="services-container">
+          <BlackMiddleLine
+            // firstLine="Let's"
+            blackLine="Develop"
+            lastLine="Apps"
+            textColor="black"
+            bgColor="transparent"
+            onClick={console.log}
+            id="1"
+            startAnimation={isVisible}
+          />
+          <BlackMiddleLine
+            // firstLine="Let's"
+            blackLine="Design"
+            lastLine="Websites"
+            textColor="black"
+            bgColor="transparent"
+            onClick={console.log}
+            id="2"
+            startAnimation={isVisible}
+            delay={150}
+          />
+          <BlackMiddleLine
+            // firstLine="Let's"
+            blackLine="Build"
+            lastLine="The Future"
+            textColor="black"
+            bgColor="transparent"
+            onClick={console.log}
+            id="3"
+            startAnimation={isVisible}
+            delay={200}
+          />
         </div>
-        <div className="col-right col-50"></div>
-      </Fade>
-    </div>
+      </div>
+    </>
   );
 }

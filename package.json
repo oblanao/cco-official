@@ -11,6 +11,6 @@
     "next": "9.3.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-reveal": "^1.2.2"
+    "react-visibility-sensor": "^5.1.1"
   }
 }

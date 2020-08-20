@@ -4,7 +4,7 @@ import { Test, WebsiteHome } from "../components";
 export default function Index() {
   return (
     <>
-      <WebsiteHome showIntro={true} />
+      <WebsiteHome showIntro={false} />
       {/* <div
         style={{
           display: "flex",
@@ -12,7 +12,7 @@ export default function Index() {
           width: "100vw",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "red",
+          backgroundColor: "white",
         }}
       >
         <Test />
