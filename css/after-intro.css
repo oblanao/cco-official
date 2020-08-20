@@ -1,0 +1,20 @@
+.after-intro {
+  transition: opacity 0.6s ease-in;
+}
+
+.after-intro.header-left {
+  /* transition-delay: 0.6s; */
+  /* transition-duration: 1s; */
+}
+
+.after-intro.header-right {
+  /* transition-delay: 0.6s; */
+}
+
+.after-intro.landing-title {
+  transition-delay: 0.25s;
+}
+
+.after-intro.landing-tagline {
+  transition-delay: 0.5s;
+}

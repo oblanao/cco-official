@@ -1,4 +1,5 @@
 import { Test, WebsiteHome } from "../components";
+//TODO: add speedControl prop to WebsiteHome
 
 export default function Index() {
   return (

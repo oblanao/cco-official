@@ -6,9 +6,17 @@ import HomeSecond from "./HomeSecond";
 export default function MainPage(props) {
   useEffect(() => {
     if (props.withAnimation) {
-      document.querySelector(".content").classList.remove("opacity-0");
+      const elements = document.querySelectorAll(".after-intro");
+      for (let i = 0; i < elements.length; i++) {
+        const el = elements[i];
+        console.log(el);
+        setTimeout(() => {
+          el.classList.remove("opacity-0");
+        }, i * 75);
+      }
     }
   });
+
   return (
     <>
       <style jsx>{`

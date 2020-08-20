@@ -20,23 +20,15 @@ export default function Header(props) {
       // setMenuOpen(true);
     }
   };
-  const bgColor = !animated ? "#fff" : "#f2f2f2";
   return (
     <>
       <style jsx>{`
         header {
-          background: ${bgColor};
+          background: #f2f2f2;
           padding: 20px;
           display: flex;
           align-items: center;
-          /* box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.5); */
           position: relative;
-        }
-
-        @media (max-width: 576px) {
-          header {
-            padding: 0.5rem;
-          }
         }
 
         .header__navigation {
@@ -54,11 +46,6 @@ export default function Header(props) {
           bottom: 0;
         }
 
-        header,
-        header > div {
-          transition: opacity 0.45s;
-          opacity: 1;
-        }
         .header__navigation--open {
           transform: scaleY(1);
           opacity: 1;
@@ -92,13 +79,19 @@ export default function Header(props) {
           display: flex;
           justify-content: flex-end;
         }
+
+        @media (max-width: 576px) {
+          header {
+            padding: 0.5rem;
+          }
+        }
       `}</style>
-      <header className={animated ? "opacity-0" : "opacity-1"}>
-        <div className="header-left">
+      <header>
+        <div className="header-left after-intro opacity-0">
           <img src="/images/logo-color-64.png" alt="logo-cco" height="64" />
         </div>
         <div className="header-center"></div>
-        <div className="header-right">
+        <div className="header-right after-intro opacity-0">
           <WebsiteMenu handleClick={onMenuClick} />
         </div>
       </header>
