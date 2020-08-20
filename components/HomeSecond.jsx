@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { BlackMiddleLine } from "./TextEffects";
 import VisibilitySensor from "react-visibility-sensor";
-import { vh } from "../helpers/functions";
+import { vh, isMobile } from "../helpers/functions";
 
 export default function HomeSecond(props) {
   const [topOffset, setOffset] = useState(0);
   const [isVisible, setVisible] = useState(false);
   useEffect(() => {
-    const offset = vh(document) * 40;
+    const offset = isMobile() ? 50 : 350;
     console.log(offset);
     setOffset(offset);
   }, []);
