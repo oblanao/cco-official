@@ -3,6 +3,7 @@ import { Fullscreen, Header } from ".";
 import HomeLanding from "./HomeLanding";
 import HomeSecond from "./HomeSecond";
 import HomeThird from "./HomeThird";
+import HomeFourth from "./HomeFourth";
 
 export default function MainPage(props) {
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function MainPage(props) {
           <HomeLanding withAnimation={props.withAnimation} />
           <HomeThird withAnimation={props.withAnimation} />
           <HomeSecond withAnimation={props.withAnimation} />
-          <HomeThird withAnimation={props.withAnimation} />
+          <HomeFourth withAnimation={props.withAnimation} />
         </div>
       </Fullscreen>
     </>

@@ -140,17 +140,32 @@ export default function BlackMiddleLine(props) {
         .bg-fill-1-reverse {
           background-position: -90% 0% !important;
         }
+        .bg-fill-1-none {
+          background-position: 0% 0% !important;
+        }
         .bg-fill-2-reverse {
           background-position: -70% 0% !important;
+        }
+        .bg-fill-2-none {
+          background-position: 0% 0% !important;
         }
         .bg-fill-3-reverse {
           background-position: -50% 0% !important;
         }
+        .bg-fill-3-none {
+          background-position: 0% 0% !important;
+        }
         .bg-fill-4-reverse {
           background-position: -30% 0% !important;
         }
+        .bg-fill-4-none {
+          background-position: 0% 0% !important;
+        }
         .bg-fill-5-reverse {
           background-position: -10% 0% !important;
+        }
+        .bg-fill-5-none {
+          background-position: 0% 0% !important;
         }
         .text-fill-1 {
           background-position: 99% 0% !important;

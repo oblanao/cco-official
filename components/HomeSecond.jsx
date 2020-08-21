@@ -18,6 +18,7 @@ export default function HomeSecond(props) {
           color: #;
           flex-direction: column;
           padding: 5rem 1rem;
+          padding-bottom: 150px;
           font-family: "Queental";
           justify-content: center;
           align-items: center;
@@ -35,7 +36,9 @@ export default function HomeSecond(props) {
         }
         @media (max-width: 991px) {
           .content-home-second {
-            padding: 2.5rem 1rem;
+            padding-top: 2.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
           }
           .content-home-second .content-title {
             margin-bottom: 2rem;

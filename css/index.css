@@ -141,7 +141,8 @@ body.nav-active .svg__cta {
   transition: opacity 1s ease-in;
   transition-delay: 1s;
 }
-.content-third {
+.content-third,
+.content-fourth {
   background: black;
   color: white;
   padding: 7.5rem 1rem;
@@ -149,20 +150,22 @@ body.nav-active .svg__cta {
   align-items: flex-start;
   position: relative;
 }
-.content-third .content-section__inner {
+.content-third .content-section__inner,
+.content-fourth .content-section__inner {
   width: 100%;
   padding: 2rem;
   max-width: 600px;
   line-height: 2rem;
 }
-.content-third .about-title {
+.content-third .about-title,
+.work-title {
   margin-bottom: 150px;
   text-align: center;
 }
 .content-third .about-text {
   transition: all 0.3s ease-in;
 }
-.content-third .floating-logo {
+.floating-logo {
   position: absolute;
   /* bottom: -128px; */
   left: 0;
@@ -173,15 +176,23 @@ body.nav-active .svg__cta {
   position: absolute;
   top: -128px;
   left: 50%;
+  /* left: 50%; */
   transform: translateX(-50%);
   transition-delay: 1s;
+  opacity: 0;
+  width: 256px;
 }
 @media (max-width: 991px) {
   .svg__cta {
     display: none;
   }
-  .content-third .content-section__inner {
+  .content-third .content-section__inner,
+  .content-fourth .content-section__inner {
     padding: 0.25rem;
     text-align: justify;
+  }
+  .floating-icon {
+    top: -96px;
+    width: 192px;
   }
 }

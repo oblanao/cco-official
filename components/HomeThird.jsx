@@ -20,10 +20,13 @@ export default function HomeThird(props) {
     <>
       {/* <div className="content content-third full-screen"> */}
       <FullScreenContent className="content-third">
-        <FadeWithScroll id="chip-icon" targetSelector=".floating-icon">
+        <FadeWithScroll
+          id="chip-icon"
+          targetSelector=".floating-icon"
+          topValue={0.8}
+        >
           <img
             src="/images/icons/chip-half.png"
-            width="256px"
             alt="floating-brain-icon"
             className="floating-icon after-intro opacity-0"
           />

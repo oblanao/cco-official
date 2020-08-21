@@ -6,19 +6,20 @@ export default function AnimatedBlackMiddleLine(props) {
     const diff = 50 - scrollY;
     const absoluteDiff = Math.abs(diff);
     console.log("diff", diff);
+    const suffix = props.withReverse ? "reverse" : "none";
     if (absoluteDiff > 45) {
-      return diff > 0 ? "bg-fill-1-reverse" : "bg-fill-1";
+      return diff > 0 ? `bg-fill-1-${suffix}` : "bg-fill-1";
     }
     if (absoluteDiff > 37) {
-      return diff > 0 ? "bg-fill-2-reverse" : "bg-fill-2";
+      return diff > 0 ? `bg-fill-2-${suffix}` : "bg-fill-2";
     }
     if (absoluteDiff > 30) {
-      return diff > 0 ? "bg-fill-3-reverse" : "bg-fill-3";
+      return diff > 0 ? `bg-fill-3-${suffix}` : "bg-fill-3";
     }
     if (absoluteDiff > 25) {
-      return diff > 0 ? "bg-fill-4-reverse" : "bg-fill-4";
+      return diff > 0 ? `bg-fill-4-${suffix}` : "bg-fill-4";
     }
-    return diff > 0 ? "bg-fill-5-reverse" : "bg-fill-5";
+    return diff > 0 ? `bg-fill-5-${suffix}` : "bg-fill-5";
   };
   const updateRule = (elementId, scrollY, scrollSpeed) => {
     console.log("elementID", elementId);
