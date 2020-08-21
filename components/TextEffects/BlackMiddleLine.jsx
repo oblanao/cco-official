@@ -1,26 +1,18 @@
 import VisibilitySensor from "react-visibility-sensor";
 import { vh } from "../../helpers/functions";
 import { useEffect, useState } from "react";
+import ClassWithScroll from "../HOC/ClassWithScroll";
 
 export default function BlackMiddleLine(props) {
   const [topOffset, setOffset] = useState(false);
   useEffect(() => {
-    // const offset = vh(document) * 30;
-    // console.log(offset);
-    // setOffset(offset);{
     if (props.startAnimation) {
       startAnimation();
     }
   }, [props.startAnimation]);
   const { firstLine, blackLine, lastLine, delay, id } = props;
   const elementId = `black-effect-container-${id}`;
-  // const onChange = (isVisible) => {
-  //   console.log(elementId);
-  //   console.log("isVisible ", isVisible);
-  //   if (isVisible) {
-  //     startAnimation();
-  //   }
-  // };
+
   const startAnimation = () => {
     const el = document.getElementById(elementId);
     const lineEl = el.querySelector(".black-line");
@@ -91,8 +83,8 @@ export default function BlackMiddleLine(props) {
             ${blakckLineBgColor} 50%
           );
           background-size: 200% 100%;
-          background-position: right bottom;
-          transition: all 1s ease-in;
+          background-position: 90% 0%;
+          transition: all 2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
 
           margin: 0.45rem auto;
           padding: 0.5rem 1rem;
@@ -101,14 +93,67 @@ export default function BlackMiddleLine(props) {
           align-items: center;
         }
         .black-line.animated > div {
-          animation: bgChangeLeft 0.75s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-          animation-fill-mode: forwards;
+           {
+            /* animation: bgChangeLeft 0.75s cubic-bezier(0.51, 0.92, 0.24, 1.15); */
+          }
+           {
+            /* animation-fill-mode: forwards; */
+          }
         }
         .black-text {
-          color: black;
-          animation: colorChange 0.35s ease-in;
-          animation-delay: 0.15s;
-          animation-fill-mode: forwards;
+          background-color: white;
+          background-image: linear-gradient(to right, white 50%, black 50%);
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          -moz-text-fill-color: transparent;
+          transition: all 0.3s ease;
+           {
+            /* color: black; */
+          }
+           {
+            /* animation: colorChange 0.35s ease-in; */
+          }
+           {
+            /* animation-delay: 0.15s; */
+          }
+           {
+            /* animation-fill-mode: forwards; */
+          }
+        }
+        .bg-fill-1 {
+          background-position: 90% 0% !important;
+        }
+        .bg-fill-2 {
+          background-position: 70% 0% !important;
+        }
+        .bg-fill-3 {
+          background-position: 50% 0% !important;
+        }
+        .bg-fill-4 {
+          background-position: 30% 0% !important;
+        }
+        .bg-fill-5 {
+          background-position: 0% 0% !important;
+        }
+        .bg-fill-1-reverse {
+          background-position: -90% 0% !important;
+        }
+        .bg-fill-2-reverse {
+          background-position: -70% 0% !important;
+        }
+        .bg-fill-3-reverse {
+          background-position: -50% 0% !important;
+        }
+        .bg-fill-4-reverse {
+          background-position: -30% 0% !important;
+        }
+        .bg-fill-5-reverse {
+          background-position: -10% 0% !important;
+        }
+        .text-fill-1 {
+          background-position: 99% 0% !important;
         }
         .black-middle-line__container:hover::before {
           right: calc(62% + 5px);

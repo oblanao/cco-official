@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function ScrollWatcher(props) {
   const { children, id } = props;
-  const elementId = `el-to-watch-${id}`;
+  const elementId = id;
   const elInViewport = () => {
     const windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
@@ -48,24 +48,11 @@ export default function ScrollWatcher(props) {
         }
         const windowHeight =
           window.innerHeight || document.documentElement.clientHeight;
-        const elOffsetTop = document.getElementById(elementId).offsetTop;
-        const middleElOffsetTop =
-          elOffsetTop + document.getElementById(elementId).offsetHeight / 2;
-        const elScroll = document.querySelector(".fullscreen-wrapper")
-          .scrollTop;
-        console.log(elScroll);
-        // const windowScroll = window.scrollY;
-        const windowScroll = elScroll;
-        const viewportOffsetToMiddle = middleElOffsetTop - windowScroll;
-        const viewportOffsetToTop = elOffsetTop - windowScroll;
-        console.log(
-          "top: ",
-          viewportOffsetToTop,
-          "    middle: ",
-          viewportOffsetToMiddle
-        );
+        const rect = document.getElementById(elementId).getBoundingClientRect();
+        const positionY = rect.y;
+        const positionYAtMiddle = rect.y + rect.height / 2;
         const relativeViewportOffset = Math.round(
-          (viewportOffsetToMiddle / windowHeight) * 100
+          (positionYAtMiddle / windowHeight) * 100
         );
         const scrollSpeed = checkScrollSpeed();
         props.onViewportScroll(elementId, relativeViewportOffset, scrollSpeed);
@@ -90,9 +77,6 @@ export default function ScrollWatcher(props) {
     <>
       <style jsx>{`
         .scroll-watcher {
-          transition: opacity 0.2s ease-in;
-          opacity: 0;
-          font-size: 8rem;
         }
       `}</style>
       <div id={elementId} className="scroll-watcher">

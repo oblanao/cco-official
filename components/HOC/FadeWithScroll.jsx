@@ -16,7 +16,7 @@ const getOpacity = (scrollY) => {
    * distance = 50, opacity = 0
    */
   const distFromMiddle = Math.abs(50 - scrollY);
-  if (distFromMiddle <= 15) {
+  if (distFromMiddle <= 35) {
     return 1;
   }
   const percentFromMiddle = distFromMiddle / 50;
