@@ -36,12 +36,6 @@ export default function FadeWithScroll(props) {
   const id = `el-to-watch-${props.id}`;
 
   const updateFadeClass = (elementId, scrollY, scrollSpeed) => {
-    console.log(
-      "element with ",
-      scrollY,
-      " is scrolling at speed ",
-      scrollSpeed
-    );
     const el = document.getElementById(elementId);
     const newOpacity = getOpacity(scrollY);
     const newSpeed = getSpeed(scrollSpeed);
@@ -49,7 +43,11 @@ export default function FadeWithScroll(props) {
     el.style.transition = `opacity ${newSpeed}s`;
   };
   return (
-    <ScrollWatcher id={id} onViewportScroll={updateFadeClass}>
+    <ScrollWatcher
+      id={id}
+      onViewportScroll={updateFadeClass}
+      onEnter={props.onEnter}
+    >
       {props.children}
     </ScrollWatcher>
   );

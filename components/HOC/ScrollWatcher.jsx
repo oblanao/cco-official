@@ -43,13 +43,19 @@ export default function ScrollWatcher(props) {
     })();
     const watchScroll = () => {
       if (elInViewport()) {
+        if (typeof props.onEnter === "function") {
+          props.onEnter(elementId);
+        }
         const windowHeight =
           window.innerHeight || document.documentElement.clientHeight;
         const elOffsetTop = document.getElementById(elementId).offsetTop;
         const middleElOffsetTop =
           elOffsetTop + document.getElementById(elementId).offsetHeight / 2;
-
-        const windowScroll = window.scrollY;
+        const elScroll = document.querySelector(".fullscreen-wrapper")
+          .scrollTop;
+        console.log(elScroll);
+        // const windowScroll = window.scrollY;
+        const windowScroll = elScroll;
         const viewportOffsetToMiddle = middleElOffsetTop - windowScroll;
         const viewportOffsetToTop = elOffsetTop - windowScroll;
         console.log(
@@ -67,10 +73,16 @@ export default function ScrollWatcher(props) {
     };
     watchScroll();
     const scrollListener = () => {
+      document
+        .querySelector(".fullscreen-wrapper")
+        .addEventListener("scroll", watchScroll);
       window.addEventListener("scroll", watchScroll);
     };
     scrollListener();
     return () => {
+      document
+        .querySelector(".fullscreen-wrapper")
+        .removeEventListener("scroll", watchScroll);
       window.removeEventListener("scroll", watchScroll);
     };
   }, []);

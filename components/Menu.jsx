@@ -14,7 +14,6 @@ export default function WebsiteMenu(props) {
         applyListeners();
       };
       var applyListeners = function applyListeners() {
-        console.log("applied listener");
         menu.addEventListener("click", function () {
           return props.handleClick();
         });

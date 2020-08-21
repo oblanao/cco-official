@@ -9,7 +9,6 @@ export default function MainPage(props) {
       const elements = document.querySelectorAll(".after-intro");
       for (let i = 0; i < elements.length; i++) {
         const el = elements[i];
-        console.log(el);
         setTimeout(() => {
           el.classList.remove("opacity-0");
         }, i * 75);
