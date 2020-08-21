@@ -109,7 +109,7 @@ export default function BlackMiddleLine(props) {
           -webkit-text-fill-color: transparent;
           -moz-text-fill-color: transparent;
           transition: all 0.3s ease;
-           {
+          color: ${props.textColor} {
             /* color: black; */
           }
            {

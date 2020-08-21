@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Fullscreen, Header } from ".";
 import HomeLanding from "./HomeLanding";
 import HomeSecond from "./HomeSecond";
+import HomeThird from "./HomeThird";
 
 export default function MainPage(props) {
   useEffect(() => {
@@ -29,9 +30,8 @@ export default function MainPage(props) {
         <div className="main-page">
           <Header withAnimation={props.withAnimation} />
           <HomeLanding withAnimation={props.withAnimation} />
+          <HomeThird withAnimation={props.withAnimation} />
           <HomeSecond withAnimation={props.withAnimation} />
-          <HomeLanding withAnimation={props.withAnimation} />
-          <HomeLanding withAnimation={props.withAnimation} />
         </div>
       </Fullscreen>
     </>

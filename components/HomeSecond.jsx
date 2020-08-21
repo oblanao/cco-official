@@ -15,7 +15,7 @@ export default function HomeSecond(props) {
       <style jsx>{`
         .content-home-second {
           background: #f2f2f2;
-          color: black;
+          color: #;
           flex-direction: column;
           padding: 5rem 1rem;
           font-family: "Queental";

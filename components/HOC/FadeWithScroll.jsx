@@ -1,13 +1,4 @@
 import ScrollWatcher from "./ScrollWatcher";
-import { useEffect } from "react";
-
-const opacities = {
-  10: 0.15,
-  25: 0.3,
-  50: 1,
-  75: 0.3,
-  90: 0.15,
-};
 
 const getOpacity = (scrollY) => {
   /**
@@ -16,7 +7,7 @@ const getOpacity = (scrollY) => {
    * distance = 50, opacity = 0
    */
   const distFromMiddle = Math.abs(50 - scrollY);
-  if (distFromMiddle <= 35) {
+  if (distFromMiddle <= 15) {
     return 1;
   }
   const percentFromMiddle = distFromMiddle / 50;
