@@ -4,7 +4,7 @@ const showIntro = process.env.NODE_ENV === "production";
 export default function Index() {
   return (
     <>
-      <WebsiteHome showIntro={showIntro} />
+      {/* <WebsiteHome showIntro={showIntro} /> */}
       {/* <div
         style={{
           display: "flex",
@@ -14,9 +14,9 @@ export default function Index() {
           alignItems: "center",
           backgroundColor: "white",
         }}
-      >
-        <Test />
-      </div> */}
+      > */}
+      <Test />
+      {/* </div> */}
     </>
   );
 }
