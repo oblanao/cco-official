@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import CircleCTA from "./CircleCTA";
 
 export default function WebsiteMenu(props) {
+  const [windowHeight, setHeight] = useState(0);
   useEffect(() => {
+    console.log("height is ", window.innerHeight);
+    setHeight(window.innerHeight);
     var app = function () {
       var body = undefined;
       var menu = undefined;
@@ -24,7 +27,11 @@ export default function WebsiteMenu(props) {
   }, []);
   return (
     <>
-      <style jsx>{``}</style>
+      <style jsx>{`
+        .nav::after {
+          height: ${`${windowHeight}px`};
+        }
+      `}</style>
       <img
         src="/images/logo-white-64.png"
         width="64"

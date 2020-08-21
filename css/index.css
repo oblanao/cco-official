@@ -6,7 +6,6 @@
   font-family: "Queental";
   src: url("/fonts/Queental-Regular.ttf");
 }
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap");
 
 :root {
   --classic-blue: #0f4c81;
@@ -43,11 +42,11 @@ body {
   margin-bottom: 1rem;
 }
 
-.content:not(.content-landing) {
+/* .content:not(.content-landing) {
   text-transform: none;
   font-family: "Inconsolata", monospace;
   font-weight: normal;
-}
+} */
 .content {
   display: flex;
   justify-content: center;
@@ -142,9 +141,47 @@ body.nav-active .svg__cta {
   transition: opacity 1s ease-in;
   transition-delay: 1s;
 }
-
+.content-third {
+  background: black;
+  color: white;
+  padding: 7.5rem 1rem;
+  font-family: "Queental";
+  align-items: flex-start;
+  position: relative;
+}
+.content-third .content-section__inner {
+  width: 100%;
+  padding: 2rem;
+  max-width: 600px;
+  line-height: 2rem;
+}
+.content-third .about-title {
+  margin-bottom: 150px;
+  text-align: center;
+}
+.content-third .about-text {
+  transition: all 0.3s ease-in;
+}
+.content-third .floating-logo {
+  position: absolute;
+  /* bottom: -128px; */
+  left: 0;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.floating-icon {
+  position: absolute;
+  top: -128px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition-delay: 1s;
+}
 @media (max-width: 991px) {
   .svg__cta {
     display: none;
+  }
+  .content-third .content-section__inner {
+    padding: 0.25rem;
+    text-align: justify;
   }
 }

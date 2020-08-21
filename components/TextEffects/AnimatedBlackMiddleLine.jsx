@@ -23,7 +23,10 @@ export default function AnimatedBlackMiddleLine(props) {
   const updateRule = (elementId, scrollY, scrollSpeed) => {
     console.log("elementID", elementId);
     const elClass = getElClass(scrollY);
-    const targetEl = document.querySelector(`#${elementId} .black-line > div`);
+    const targetEl = document.querySelector(elementId);
+    if (!targetEl) {
+      throw new Error(elementId);
+    }
     targetEl.classList.remove("bg-fill-1");
     targetEl.classList.remove("bg-fill-2");
     targetEl.classList.remove("bg-fill-3");

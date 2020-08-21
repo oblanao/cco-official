@@ -27,7 +27,7 @@ export default function FadeWithScroll(props) {
   const id = `el-to-watch-${props.id}`;
 
   const updateFadeClass = (elementId, scrollY, scrollSpeed) => {
-    const el = document.getElementById(elementId);
+    const el = document.querySelector(elementId);
     const newOpacity = getOpacity(scrollY);
     const newSpeed = getSpeed(scrollSpeed);
     el.style.opacity = newOpacity;
@@ -38,6 +38,7 @@ export default function FadeWithScroll(props) {
       id={id}
       onViewportScroll={updateFadeClass}
       onEnter={props.onEnter}
+      targetSelector={props.targetSelector}
     >
       {props.children}
     </ScrollWatcher>

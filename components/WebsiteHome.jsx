@@ -6,7 +6,7 @@ import Intro from "./Intro";
 export default function WebsiteHome(props) {
   const { debug, showIntro } = props;
   const [introOut, setIntroOut] = useState(false);
-
+  const [windowHeight, setHeight] = useState(0);
   const hideIntroShowSite = () => {
     addClass(".main", "height-0");
     const intro = document.querySelector(".main-inner");
@@ -42,6 +42,7 @@ export default function WebsiteHome(props) {
     );
   };
   useEffect(() => {
+    setHeight(windowHeight);
     if (!showIntro) {
       hideIntroShowSite();
     }
@@ -87,7 +88,7 @@ export default function WebsiteHome(props) {
         .outer-wrapper {
           display: flex;
           width: 100vw;
-          min-height: 100vh;
+          min-height: ${`${windowHeight}px`};
           flex-direction: column;
         }
 

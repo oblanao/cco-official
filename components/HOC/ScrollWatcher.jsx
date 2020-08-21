@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function ScrollWatcher(props) {
-  const { children, id } = props;
+  const { children, id, targetSelector } = props;
   const elementId = id;
   const elInViewport = () => {
     const windowHeight =
@@ -55,7 +55,12 @@ export default function ScrollWatcher(props) {
           (positionYAtMiddle / windowHeight) * 100
         );
         const scrollSpeed = checkScrollSpeed();
-        props.onViewportScroll(elementId, relativeViewportOffset, scrollSpeed);
+        const fullSelector = `#${elementId} ${targetSelector}`;
+        props.onViewportScroll(
+          fullSelector,
+          relativeViewportOffset,
+          scrollSpeed
+        );
       }
     };
     watchScroll();

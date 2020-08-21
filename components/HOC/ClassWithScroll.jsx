@@ -6,6 +6,7 @@ export default function ClassWithScroll(props) {
   return (
     <ScrollWatcher
       id={id}
+      targetSelector={props.targetSelector}
       onViewportScroll={props.updateRule}
       onEnter={props.onEnter}
     >

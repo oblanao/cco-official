@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { addClass, removeClass } from "../helpers/functions";
 
 export default function Intro(props) {
   const { debug, callback } = props;
+  const [windowHeight, setHeight] = useState(0);
   useEffect(() => {
     // TODO: disable scrolling
+    setHeight(window.innerHeight);
     setTimeout(
       function () {
         addClass(".main-loading-text.one", "opacity-0");
@@ -80,7 +82,7 @@ export default function Intro(props) {
           position: absolute;
           display: flex;
           width: 100vw;
-          height: 100vh;
+          height: ${`${windowHeight}px`};
           -webkit-flex-direction: column;
           -ms-flex-direction: column;
           flex-direction: column;

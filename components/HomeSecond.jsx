@@ -46,7 +46,11 @@ export default function HomeSecond(props) {
         }
       `}</style>
       <div className="content content-home-second after-intro">
-        <FadeWithScroll onEnter={handleServiceTitleEnter} id="services-title">
+        <FadeWithScroll
+          onEnter={handleServiceTitleEnter}
+          id="services-title"
+          targetSelector={"h2.content-title"}
+        >
           <h2 className="content-title">OUR SERVICES</h2>
         </FadeWithScroll>
         <div className="services-container">
