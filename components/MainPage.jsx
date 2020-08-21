@@ -32,6 +32,7 @@ export default function MainPage(props) {
           <HomeLanding withAnimation={props.withAnimation} />
           <HomeThird withAnimation={props.withAnimation} />
           <HomeSecond withAnimation={props.withAnimation} />
+          <HomeThird withAnimation={props.withAnimation} />
         </div>
       </Fullscreen>
     </>
