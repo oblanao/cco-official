@@ -13,7 +13,7 @@ export default function HomeFourth(props) {
         <FadeWithScroll
           id="crown-icon"
           targetSelector=".floating-icon"
-          topValue={0.8}
+          topValue={0.5}
         >
           <img
             src="/images/icons/crown-queen-half.png"

@@ -23,7 +23,7 @@ export default function HomeThird(props) {
         <FadeWithScroll
           id="chip-icon"
           targetSelector=".floating-icon"
-          topValue={0.8}
+          topValue={0.5}
         >
           <img
             src="/images/icons/chip-half.png"
