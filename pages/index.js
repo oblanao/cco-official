@@ -4,7 +4,7 @@ const showIntro = process.env.NODE_ENV === "production";
 export default function Index() {
   return (
     <>
-      <WebsiteHome showIntro={false} />
+      <WebsiteHome showIntro={showIntro} />
 
       {/* <Test /> */}
     </>
