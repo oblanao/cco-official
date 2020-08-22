@@ -62,6 +62,11 @@ export default function DoubleBorderButton(props) {
           -webkit-transform: translate(0);
           transform: translate(0);
         }
+        @media (max-width: 576px) {
+          button.boduble-border-button {
+            font-size: 1.13rem;
+          }
+        }
       `}</style>
       <button
         className={`double-border-button ${effectClass} ${props.className}`}
