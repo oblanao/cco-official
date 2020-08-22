@@ -12,7 +12,7 @@ export default function HomeLanding(props) {
         withAnimation={true}
         className="mt-2 after-intro opacity-0"
         text="Let's talk"
-        startAnimation
+        startAnimation={props.withAnimation}
         initialDelay={1000}
       />
     </FullScreenContent>
