@@ -63,7 +63,7 @@ export default function DoubleBorderButton(props) {
           transform: translate(0);
         }
         @media (max-width: 576px) {
-          button.boduble-border-button {
+          button.double-border-button {
             font-size: 1.13rem;
           }
         }
