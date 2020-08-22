@@ -11,8 +11,8 @@ export default function DoubleBorderButton(props) {
         setClass("forced-opacity");
       };
       setTimeout(() => {
-        setTimeout(makeVisible, 200);
-        setTimeout(makeBorders, 1000);
+        setTimeout(() => makeVisible(), 200);
+        setTimeout(() => makeBorders(), 1000);
       }, props.initialDelay);
     }
   }, [props.startAnimation]);
