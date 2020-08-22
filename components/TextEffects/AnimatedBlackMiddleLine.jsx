@@ -5,7 +5,6 @@ export default function AnimatedBlackMiddleLine(props) {
   const getElClass = (scrollY) => {
     const diff = 50 - scrollY;
     const absoluteDiff = Math.abs(diff);
-    console.log("diff", diff);
     const suffix = props.withReverse ? "reverse" : "none";
     if (absoluteDiff > 45) {
       return diff > 0 ? `bg-fill-1-${suffix}` : "bg-fill-1";
@@ -22,7 +21,6 @@ export default function AnimatedBlackMiddleLine(props) {
     return diff > 0 ? `bg-fill-5-${suffix}` : "bg-fill-5";
   };
   const updateRule = (elementId, scrollY, scrollSpeed) => {
-    console.log("elementID", elementId);
     const elClass = getElClass(scrollY);
     const targetEl = document.querySelector(elementId);
     if (!targetEl) {

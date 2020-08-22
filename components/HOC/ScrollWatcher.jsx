@@ -56,11 +56,13 @@ export default function ScrollWatcher(props) {
         );
         const scrollSpeed = checkScrollSpeed();
         const fullSelector = `#${elementId} ${targetSelector}`;
-        props.onViewportScroll(
-          fullSelector,
-          relativeViewportOffset,
-          scrollSpeed
-        );
+        if (typeof props.onViewportScroll === "function") {
+          props.onViewportScroll(
+            fullSelector,
+            relativeViewportOffset,
+            scrollSpeed
+          );
+        }
       }
     };
     watchScroll();

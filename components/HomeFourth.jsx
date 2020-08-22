@@ -1,5 +1,5 @@
 import ClassWithScroll from "./HOC/ClassWithScroll";
-import FadeWithScroll from "./HOC/FadeWithScroll";
+// import FadeWithScroll from "./HOC/FadeWithScroll";
 import FullScreenContent from "./HOC/FullScreenContent";
 
 export default function HomeFourth(props) {
@@ -10,7 +10,7 @@ export default function HomeFourth(props) {
   return (
     <>
       <FullScreenContent className="content-fourth">
-        <FadeWithScroll
+        {/* <FadeWithScroll
           id="crown-icon"
           targetSelector=".floating-icon"
           topValue={0.5}
@@ -20,7 +20,7 @@ export default function HomeFourth(props) {
             alt="floating-crown-icon"
             className="floating-icon after-intro opacity-0"
           />
-        </FadeWithScroll>
+        </FadeWithScroll> */}
         <div className="content-section__inner">
           <ClassWithScroll
             id="work-title"

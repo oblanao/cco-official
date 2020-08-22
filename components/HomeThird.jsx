@@ -1,13 +1,16 @@
 import ClassWithScroll from "./HOC/ClassWithScroll";
 import FadeWithScroll from "./HOC/FadeWithScroll";
 import FullScreenContent from "./HOC/FullScreenContent";
+import DoubleBorderButton from "./Buttons/DoubleBorder";
+import ScrollWatcher from "./HOC/ScrollWatcher";
+import { useState } from "react";
 
 export default function HomeThird(props) {
   const updateTitleRule = (elementId, scrollY, speed) => {
     document.querySelector(elementId).style.transform =
       "translateY(" + scrollY * 0.75 + "px)";
   };
-
+  const [aboutButtonAnimation, setAboutButtonAnimation] = useState(false);
   // const updateTextRule = (elementId, scrollY, speed) => {
   //   let scaleValue = 100 / scrollY;
   //   if (scaleValue > 1.2) {
@@ -18,9 +21,10 @@ export default function HomeThird(props) {
   // };
   return (
     <>
+      <style jsx>{``}</style>
       {/* <div className="content content-third full-screen"> */}
       <FullScreenContent className="content-third">
-        <FadeWithScroll
+        {/* <FadeWithScroll
           id="chip-icon"
           targetSelector=".floating-icon"
           topValue={0.5}
@@ -30,7 +34,7 @@ export default function HomeThird(props) {
             alt="floating-brain-icon"
             className="floating-icon after-intro opacity-0"
           />
-        </FadeWithScroll>
+        </FadeWithScroll> */}
         <div className="content-section__inner">
           <ClassWithScroll
             id="about-title"
@@ -58,6 +62,17 @@ export default function HomeThird(props) {
               improvement, we also focus on modern IT technologies.
             </h4>
           </FadeWithScroll>
+          <ScrollWatcher
+            id="about-button"
+            onEnter={() => setAboutButtonAnimation(true)}
+          >
+            <DoubleBorderButton
+              className="about-button"
+              text="Get to Know Us"
+              mainColor="white"
+              startAnimation={aboutButtonAnimation}
+            />
+          </ScrollWatcher>
           {/* </ClassWithScroll> */}
           {/* </div> */}
         </div>
