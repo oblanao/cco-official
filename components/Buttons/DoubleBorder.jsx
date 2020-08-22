@@ -2,6 +2,19 @@ import { useEffect, useState } from "react";
 
 export default function DoubleBorderButton(props) {
   const [effectClass, setClass] = useState("no-effect");
+  const calculateFontSize = () => {
+    const numLetters = props.text && props.text.length;
+    if (numLetters > 12) {
+      return "1.1rem";
+    }
+    if (numLetters > 10) {
+      return "1.3rem";
+    }
+    if (numLetters > 8) {
+      return "1.5rem";
+    }
+    return "1.75rem";
+  };
   useEffect(() => {
     if (props.startAnimation) {
       const makeVisible = () => {
@@ -24,7 +37,8 @@ export default function DoubleBorderButton(props) {
           transition: opacity 0.6s ease-in !important;
         }
         button.double-border-button {
-          font-size: 1.5rem;
+          min-width: 200px;
+          font-size: ${calculateFontSize()};
           ${props.mainColor && `color: ${props.mainColor}`};
           font-family: "Queental";
           padding: 20px 40px;
@@ -61,6 +75,11 @@ export default function DoubleBorderButton(props) {
         button.double-border-button.no-effect:before {
           -webkit-transform: translate(0);
           transform: translate(0);
+        }
+        @media (max-width: 991px) {
+          button.double-border-button {
+            font-size: ${props.text.length > "1rem"};
+          }
         }
         @media (max-width: 576px) {
           button.double-border-button {
