@@ -39,6 +39,7 @@ export default function DoubleBorderButton(props) {
         button.double-border-button {
           min-width: 200px;
           font-size: ${calculateFontSize()};
+          font-weight: 700;
           ${props.mainColor && `color: ${props.mainColor}`};
           font-family: "Queental";
           padding: 20px 40px;

@@ -1,10 +1,10 @@
 import FadeWithScroll from "./HOC/FadeWithScroll";
-import SplitInHalf from "./TextEffects/SplitInHalf";
+import RandomizerToLetter from "./TextEffects/RandomizerToLetter";
 
 export default function Test() {
   return (
     <>
-      <SplitInHalf text={"THANK YOU"} fontSize={"5rem"} />
+      <RandomizerToLetter id="1" text="50" />
     </>
   );
 }

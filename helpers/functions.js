@@ -21,5 +21,7 @@ const isMobile = (navigator) =>
   !!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
   );
-
-export { addClass, removeClass, isMobile, vh };
+const randomItem = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+export { addClass, removeClass, isMobile, vh, randomItem };

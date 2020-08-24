@@ -4,11 +4,18 @@ import FullScreenContent from "./HOC/FullScreenContent";
 import DoubleBorderButton from "./Buttons/DoubleBorder";
 import ScrollWatcher from "./HOC/ScrollWatcher";
 import { useState } from "react";
+import RandomizerToLetter from "./TextEffects/RandomizerToLetter";
+import TextWithIcon from "./HOC/TextWithIcon";
 
 export default function HomeThird(props) {
+  const [counterAnimation, setCounterAnimation] = useState(false);
   const updateTitleRule = (elementId, scrollY, speed) => {
     document.querySelector(elementId).style.transform =
       "translateY(" + scrollY * 0.75 + "px)";
+  };
+  const handleCounterEnter = (elementId, scrollY, speed) => {
+    // document.querySelector(elementId).style.opacity = scrollY;
+    setTimeout(() => setCounterAnimation(true), 550);
   };
   const [aboutButtonAnimation, setAboutButtonAnimation] = useState(false);
   // const updateTextRule = (elementId, scrollY, speed) => {
@@ -48,20 +55,49 @@ export default function HomeThird(props) {
             targetSelector=".about-text"
             updateRule={updateTextRule}
           > */}
-          <FadeWithScroll id="about-text-first" targetSelector=".about-text">
-            <h4 className="about-text">
-              We are a young company, for whom innovation and professionalism
-              are at the forefront. Once we start a project, we believe we can
-              fully meet the needs of our clients.
-            </h4>
-          </FadeWithScroll>
-          <FadeWithScroll id="about-text-second" targetSelector=".about-text">
-            <h4 className="about-text">
-              Whether you are a company or an individual, we will help you
-              create a digital dimension to your work. As part of our continuous
-              improvement, we also focus on modern IT technologies.
-            </h4>
-          </FadeWithScroll>
+          <div className="about-content">
+            <FadeWithScroll
+              id="about-text-first"
+              targetSelector=".text-with-icon"
+            >
+              <TextWithIcon
+                textComponent={
+                  <h4 className="about-texts">
+                    We are a young company, for whom innovation and
+                    professionalism are at the forefront. Once we start a
+                    project, we believe we can fully meet the needs of our
+                    clients.
+                  </h4>
+                }
+                iconComponent={
+                  <img src="/images/icons/suitcase-white.png" width="128px" />
+                }
+              />
+            </FadeWithScroll>
+            <FadeWithScroll
+              id="about-text-second"
+              targetSelector=".text-with-icon"
+            >
+              <TextWithIcon
+                iconRight
+                textComponent={
+                  <h4 className="about-texts">
+                    Whether you are a company or an individual, we will help you
+                    create a digital dimension to your work. As part of our
+                    continuous improvement, we also focus on modern IT
+                    technologies.
+                  </h4>
+                }
+                iconComponent={
+                  <img src="/images/icons/light-bulb-white.png" width="128px" />
+                }
+              />
+            </FadeWithScroll>
+            <ScrollWatcher
+              id="about-counters"
+              onEnter={handleCounterEnter}
+            ></ScrollWatcher>
+          </div>
           <ScrollWatcher
             id="about-button"
             onEnter={() => setAboutButtonAnimation(true)}
