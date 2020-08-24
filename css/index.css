@@ -104,6 +104,16 @@ body {
   height: 100%;
   width: 50%;
 }
+.services-container {
+  cursor: pointer;
+  max-width: 1000px;
+}
+.services-container > div {
+  width: 33%;
+}
+.services-container > div:not(:last-child) {
+  margin-right: 1rem;
+}
 
 .content-home-second .col-left {
   display: flex;
@@ -227,4 +237,67 @@ body.nav-active .svg__cta {
     top: -96px;
     width: 192px;
   }
+  .services-container > div {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+  }
+  .services-container > div:not(:last-child) {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+}
+
+.crazy-border {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.crazy-border::before,
+.crazy-border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #6d0300;
+  transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+}
+.crazy-border::before {
+  right: calc(100% - 15px);
+}
+.crazy-border::after {
+  left: calc(100% - 15px);
+}
+.crazy-border-last-line::before,
+.crazy-border-last-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #6d0300;
+  transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+}
+.crazy-border-last-line::before {
+  right: calc(100% - 15px);
+}
+.crazy-border-last-line::after {
+  left: calc(100% - 15px);
+}
+.crazy-border:hover::before {
+  right: calc(50% + 5px);
+}
+.crazy-border:hover::after {
+  left: calc(50% + 5px);
+}
+.crazy-border:hover .crazy-border-last-line::before {
+  right: calc(50% + 5px);
+}
+.crazy-border:hover .crazy-border-last-line::after {
+  left: calc(50% + 5px);
 }

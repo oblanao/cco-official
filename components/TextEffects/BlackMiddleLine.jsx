@@ -32,14 +32,14 @@ export default function BlackMiddleLine(props) {
           font-weight: bold;
           cursor: ${props.onClick ? "pointer" : "normal"};
           padding: 1rem;
-           {
-            /* border-left: 1px solid black;
-          border-right: 1px solid black; */
-          }
           position: relative;
-          margin: auto 1rem;
+           {
+            /* margin: auto 1rem; */
+          }
           transition: opacity 0.75s ease-in;
-          min-width: 300px;
+           {
+            /* min-width: 300px; */
+          }
         }
          {
           /* .black-middle-line__container::before,

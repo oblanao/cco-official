@@ -2,6 +2,7 @@ import { useState } from "react";
 import { isMobile } from "../helpers/functions";
 import FadeWithScroll from "./HOC/FadeWithScroll";
 import AnimatedBlackMiddleLine from "./TextEffects/AnimatedBlackMiddleLine";
+import CrazyBorder from "./HOC/CrazyBorder";
 
 export default function HomeSecond(props) {
   const [isVisible, setVisible] = useState(false);
@@ -56,7 +57,7 @@ export default function HomeSecond(props) {
           <h2 className="content-title">OUR SERVICES</h2>
         </FadeWithScroll>
         <div className="services-container">
-          <div>
+          <CrazyBorder id="service-cb-1">
             <img src="/images/icons/apps-black.png" width="80px" />
             <AnimatedBlackMiddleLine
               // firstLine={}
@@ -65,8 +66,8 @@ export default function HomeSecond(props) {
               lastLine="Apps"
               startAnimation={isVisible || isMobile()}
             />
-          </div>
-          <div>
+          </CrazyBorder>
+          <CrazyBorder id="service-cb-2">
             <img src="/images/icons/web-black.png" width="80px" />
             <AnimatedBlackMiddleLine
               id="second-blackMiddle"
@@ -75,8 +76,8 @@ export default function HomeSecond(props) {
               startAnimation={isVisible || isMobile()}
               delay={150}
             />
-          </div>
-          <div>
+          </CrazyBorder>
+          <CrazyBorder id="service-cb-3">
             <img src="/images/icons/future-black.png" width="80px" />
             <AnimatedBlackMiddleLine
               id="third-blackMiddle"
@@ -85,7 +86,7 @@ export default function HomeSecond(props) {
               startAnimation={isVisible || isMobile()}
               delay={200}
             />
-          </div>
+          </CrazyBorder>
         </div>
       </div>
     </>
