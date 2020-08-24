@@ -50,11 +50,7 @@ export default function HomeThird(props) {
           >
             <h2 className="after-intro about-title opacity-0">ABOUT US</h2>
           </ClassWithScroll>
-          {/* <ClassWithScroll
-            id="about-first-text"
-            targetSelector=".about-text"
-            updateRule={updateTextRule}
-          > */}
+
           <div className="about-content">
             <FadeWithScroll
               id="about-text-first"

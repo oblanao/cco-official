@@ -21,7 +21,7 @@ export default function FadeWithScroll(props) {
     if (distFromMiddle <= 15) {
       return props.topValue || 1;
     }
-    const percentFromMiddle = distFromMiddle / 50;
+    const percentFromMiddle = (distFromMiddle - 15) / 50;
     return 1 - percentFromMiddle;
   };
   const updateFadeClass = (elementId, scrollY, scrollSpeed) => {

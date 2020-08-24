@@ -15,7 +15,6 @@ export default function HomeSecond(props) {
       <style jsx>{`
         .content-home-second {
           background: #f2f2f2;
-          color: #;
           flex-direction: column;
           padding: 5rem 1rem;
           padding-bottom: 150px;
@@ -57,27 +56,36 @@ export default function HomeSecond(props) {
           <h2 className="content-title">OUR SERVICES</h2>
         </FadeWithScroll>
         <div className="services-container">
-          <AnimatedBlackMiddleLine
-            // firstLine={}
-            id="first-blackMiddle"
-            blackLine="Develop"
-            lastLine="Apps"
-            startAnimation={isVisible || isMobile()}
-          />
-          <AnimatedBlackMiddleLine
-            id="second-blackMiddle"
-            blackLine="Design"
-            lastLine="Websites"
-            startAnimation={isVisible || isMobile()}
-            delay={150}
-          />
-          <AnimatedBlackMiddleLine
-            id="third-blackMiddle"
-            blackLine="Build"
-            lastLine="The Future"
-            startAnimation={isVisible || isMobile()}
-            delay={200}
-          />
+          <div>
+            <img src="/images/icons/apps-black.png" width="80px" />
+            <AnimatedBlackMiddleLine
+              // firstLine={}
+              id="first-blackMiddle"
+              blackLine="Develop"
+              lastLine="Apps"
+              startAnimation={isVisible || isMobile()}
+            />
+          </div>
+          <div>
+            <img src="/images/icons/web-black.png" width="80px" />
+            <AnimatedBlackMiddleLine
+              id="second-blackMiddle"
+              blackLine="Design"
+              lastLine="Websites"
+              startAnimation={isVisible || isMobile()}
+              delay={150}
+            />
+          </div>
+          <div>
+            <img src="/images/icons/future-black.png" width="80px" />
+            <AnimatedBlackMiddleLine
+              id="third-blackMiddle"
+              blackLine="Build"
+              lastLine="The Future"
+              startAnimation={isVisible || isMobile()}
+              delay={200}
+            />
+          </div>
         </div>
       </div>
     </>

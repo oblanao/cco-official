@@ -32,14 +32,17 @@ export default function BlackMiddleLine(props) {
           font-weight: bold;
           cursor: ${props.onClick ? "pointer" : "normal"};
           padding: 1rem;
-          border-left: 1px solid black;
-          border-right: 1px solid black;
+           {
+            /* border-left: 1px solid black;
+          border-right: 1px solid black; */
+          }
           position: relative;
           margin: auto 1rem;
           transition: opacity 0.75s ease-in;
           min-width: 300px;
         }
-        .black-middle-line__container::before,
+         {
+          /* .black-middle-line__container::before,
         .black-middle-line__container::after {
           content: "";
           position: absolute;
@@ -55,8 +58,10 @@ export default function BlackMiddleLine(props) {
         }
         .black-middle-line__container::after {
           left: calc(100% - 15px);
+        } */
         }
-        .last-line::before,
+         {
+          /* .last-line::before,
         .last-line::after {
           content: "";
           position: absolute;
@@ -72,6 +77,7 @@ export default function BlackMiddleLine(props) {
         }
         .last-line::after {
           left: calc(100% - 15px);
+        } */
         }
         .black-middle-line__container > div {
           text-align: center;
