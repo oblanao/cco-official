@@ -106,10 +106,14 @@ body {
 }
 .services-container {
   cursor: pointer;
+  width: 100%;
   max-width: 1000px;
 }
 .services-container > div {
   width: 33%;
+}
+.services-container > div > img {
+  transition: all 0.3s ease-in;
 }
 .services-container > div:not(:last-child) {
   margin-right: 1rem;

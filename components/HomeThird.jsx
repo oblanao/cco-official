@@ -17,6 +17,7 @@ export default function HomeThird(props) {
     // document.querySelector(elementId).style.opacity = scrollY;
     setTimeout(() => setCounterAnimation(true), 550);
   };
+
   const [aboutButtonAnimation, setAboutButtonAnimation] = useState(false);
   // const updateTextRule = (elementId, scrollY, speed) => {
   //   let scaleValue = 100 / scrollY;

@@ -3,6 +3,7 @@ import { isMobile } from "../helpers/functions";
 import FadeWithScroll from "./HOC/FadeWithScroll";
 import AnimatedBlackMiddleLine from "./TextEffects/AnimatedBlackMiddleLine";
 import CrazyBorder from "./HOC/CrazyBorder";
+import ClassWithScroll from "./HOC/ClassWithScroll";
 
 export default function HomeSecond(props) {
   const [isVisible, setVisible] = useState(false);
@@ -10,7 +11,34 @@ export default function HomeSecond(props) {
   const handleServiceTitleEnter = () => {
     setVisible(true);
   };
-
+  const updateServicesIcon = (elementId, scrollY, speed) => {
+    if (scrollY < 65) {
+      return (document.querySelector(elementId).style.transform = "scale(1)");
+    }
+    // la 104 intra
+    // la 85 incepe black line
+    // la 75 continua black line
+    // la 69 continua
+    // la 65 e plina black line
+    const scrollValues = {
+      atEnter: 104,
+      atFull: 65,
+    };
+    const scaleValues = {
+      atEnter: 200,
+      atFull: 100,
+    };
+    const newScale =
+      scaleValues.atEnter / 100 -
+      ((scrollValues.atFull / scrollY) * scaleValues.atFull) / 100;
+    console.log("at scrollY ", scrollY, " newScale ", newScale);
+    // let scale = scrollY / 100 + 1;
+    // if (scale < 1) {
+    //   scale = 1;
+    // }
+    document.querySelector(elementId).style.transform =
+      "scale(" + newScale + ")";
+  };
   return (
     <>
       <style jsx>{`
@@ -58,7 +86,13 @@ export default function HomeSecond(props) {
         </FadeWithScroll>
         <div className="services-container">
           <CrazyBorder id="service-cb-1">
-            <img src="/images/icons/apps-black.png" width="80px" />
+            <ClassWithScroll
+              id="first-services-icon"
+              updateRule={updateServicesIcon}
+              targetSelector="img"
+            >
+              <img src="/images/icons/apps-black.png" width="80px" />
+            </ClassWithScroll>
             <AnimatedBlackMiddleLine
               // firstLine={}
               id="first-blackMiddle"
@@ -68,7 +102,13 @@ export default function HomeSecond(props) {
             />
           </CrazyBorder>
           <CrazyBorder id="service-cb-2">
-            <img src="/images/icons/web-black.png" width="80px" />
+            <ClassWithScroll
+              id="second-services-icon"
+              updateRule={updateServicesIcon}
+              targetSelector="img"
+            >
+              <img src="/images/icons/web-black.png" width="80px" />
+            </ClassWithScroll>
             <AnimatedBlackMiddleLine
               id="second-blackMiddle"
               blackLine="Design"
@@ -78,7 +118,13 @@ export default function HomeSecond(props) {
             />
           </CrazyBorder>
           <CrazyBorder id="service-cb-3">
-            <img src="/images/icons/future-black.png" width="80px" />
+            <ClassWithScroll
+              id="third-services-icon"
+              updateRule={updateServicesIcon}
+              targetSelector="img"
+            >
+              <img src="/images/icons/future-black.png" width="80px" />
+            </ClassWithScroll>
             <AnimatedBlackMiddleLine
               id="third-blackMiddle"
               blackLine="Build"
