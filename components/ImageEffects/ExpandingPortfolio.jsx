@@ -15,14 +15,13 @@ export default function ExpandingPortfolio(props) {
         }
 
         .box {
-          border: 5px solid rgba(255, 255, 255, 0.7);
-          border-radius: 25%;
+          border-radius: 10px;
           flex: 1;
           overflow: hidden;
           transition: 1.5s;
           transition-delay: 0.25s;
           margin: 0 2%;
-          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0px 20px 5px rgba(255, 255, 255, 0.5);
           line-height: 0;
           cursor: pointer;
         }
@@ -49,6 +48,7 @@ export default function ExpandingPortfolio(props) {
           flex: 1 1 50%;
           border-radius: 10px;
           border-color: black;
+          box-shadow: 0 0px 20px 20px rgba(255, 255, 255, 1);
         }
         .box:hover > img {
           width: 100%;

@@ -182,20 +182,7 @@ body.nav-active .svg__cta {
   position: relative;
   transition: all 0.5s ease-in;
 }
-.content-fourth {
-  background: linear-gradient(to bottom, black 50%, transparent 50%);
-  background-size: 100% 200%;
-  background-position: 0% 100%;
-}
-.content-fourth.bg-fill-1 {
-  background-position: 0% 67%;
-}
-.content-fourth.bg-fill-2 {
-  background-position: 0% 33%;
-}
-.content-fourth.bg-fill-3 {
-  background-position: 0% 0%;
-}
+
 .content-third .content-section__inner,
 .content-fourth .content-section__inner {
   width: 100%;
@@ -337,9 +324,7 @@ p > strong.underline-text::after {
   left: -0.25rem;
   right: -0.25rem;
 }
-.content-fourth {
-  background: black;
-}
+
 .portfolio__inner {
   width: 100%;
 }
