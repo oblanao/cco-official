@@ -4,6 +4,7 @@ import SimpleTextReveal from "./TextEffects/SimpleTextReveal";
 import UnderlineText from "./TextEffects/UnderlineText";
 import AnimatedTyping from "./TextEffects/AnimatedTyping";
 import Hover3D from "./ImageEffects/Hover3D";
+import ExpandingPortfolio from "./ImageEffects/ExpandingPortfolio";
 
 export default function Test() {
   return (
@@ -22,10 +23,25 @@ export default function Test() {
         delay={2000}
         text={"This is animated typing. Hello world!"}
       />
-      <Hover3D
-        src={
-          "https://res.cloudinary.com/websway/image/upload/v1538242836/img_vkgzwy.png"
-        }
+
+      <ExpandingPortfolio
+        items={[
+          {
+            src:
+              "https://chesscoders.com/wp-content/uploads/2020/02/Chess-Coders_Portfolio_Outran-728x728.jpg",
+            title: "OUTRAN ACTIVE",
+          },
+          {
+            src:
+              "https://chesscoders.com/wp-content/uploads/2019/07/barbumagic-728x728.jpg",
+            title: "BARBU MAGIC",
+          },
+          {
+            src:
+              "https://chesscoders.com/wp-content/uploads/2019/03/chesscoders-portofolio-romco-screenshot1-728x728.jpg",
+            title: "ROMCO ML",
+          },
+        ]}
       />
     </>
   );

@@ -232,6 +232,10 @@ body.nav-active .svg__cta {
   .svg__cta {
     display: none;
   }
+  .content-third,
+  .content-fourth {
+    padding-bottom: 2.5rem;
+  }
   .content-third .content-section__inner,
   .content-fourth .content-section__inner {
     padding: 0.25rem;
@@ -249,6 +253,9 @@ body.nav-active .svg__cta {
   .services-container > div:not(:last-child) {
     margin-bottom: 1rem;
     margin-right: 0;
+  }
+  .about-content {
+    margin-bottom: 2.5rem;
   }
 }
 
@@ -329,4 +336,10 @@ p > strong.underline-text::after {
   height: 0.5rem;
   left: -0.25rem;
   right: -0.25rem;
+}
+.content-fourth {
+  background: black;
+}
+.portfolio__inner {
+  width: 100%;
 }

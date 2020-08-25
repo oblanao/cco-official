@@ -46,10 +46,33 @@ export default function WebsiteHome(props) {
     if (!showIntro) {
       hideIntroShowSite();
     }
+    //disable scroll on hover
+    let body = document.body,
+      timer;
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        clearTimeout(timer);
+
+        if (!body.classList.contains("disable-hover")) {
+          body.classList.add("disable-hover");
+        }
+
+        timer = setTimeout(function () {
+          body.classList.remove("disable-hover");
+        }, 250);
+      },
+      false
+    );
   }, [props.showIntro]);
   return (
     <>
       <style jsx>{`
+        .disable-hover,
+        .disable-hover * {
+          pointer-events: none !important;
+        }
         .main,
         .outer-wrapper {
           left: 0;

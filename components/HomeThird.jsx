@@ -11,7 +11,7 @@ export default function HomeThird(props) {
   const [counterAnimation, setCounterAnimation] = useState(false);
   const updateTitleRule = (elementId, scrollY, speed) => {
     document.querySelector(elementId).style.transform =
-      "translateY(" + scrollY * 0.75 + "px)";
+      "translateY(" + scrollY * 1.25 + "px)";
   };
 
   const [aboutButtonAnimation, setAboutButtonAnimation] = useState(false);
