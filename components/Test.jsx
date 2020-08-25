@@ -2,6 +2,7 @@ import FadeWithScroll from "./HOC/FadeWithScroll";
 import RandomizerToLetter from "./TextEffects/RandomizerToLetter";
 import SimpleTextReveal from "./TextEffects/SimpleTextReveal";
 import UnderlineText from "./TextEffects/UnderlineText";
+import AnimatedTyping from "./TextEffects/AnimatedTyping";
 
 export default function Test() {
   return (
@@ -15,6 +16,11 @@ export default function Test() {
       <p>
         Haules balaules <UnderlineText text="haules baules" />
       </p>
+      <AnimatedTyping
+        duration={10000}
+        delay={2000}
+        text={"This is animated typing. Hello world!"}
+      />
     </>
   );
 }
