@@ -2,6 +2,7 @@ import ClassWithScroll from "./HOC/ClassWithScroll";
 // import FadeWithScroll from "./HOC/FadeWithScroll";
 import FullScreenContent from "./HOC/FullScreenContent";
 import Hover3D from "./ImageEffects/Hover3D";
+import Scroll3D from "./ImageEffects/Scroll3D";
 
 export default function HomeFourth(props) {
   const updateTitleRule = (elementId, scrollY, speed) => {
@@ -41,9 +42,10 @@ export default function HomeFourth(props) {
           </ClassWithScroll>
           <div className="row">
             <div className="work-sidebar">
-              <Hover3D
+              <Scroll3D
                 src="https://res.cloudinary.com/websway/image/upload/v1538242836/img_vkgzwy.png"
                 width={200}
+                id="work-sidebar-3d"
               />
             </div>
             <div className="work-main"></div>

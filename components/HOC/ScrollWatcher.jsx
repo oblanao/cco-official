@@ -45,6 +45,7 @@ export default function ScrollWatcher(props) {
       if (elInViewport()) {
         if (typeof props.onEnter === "function") {
           props.onEnter(elementId);
+          console.log("element ", elementId, " has entered");
         }
         const windowHeight =
           window.innerHeight || document.documentElement.clientHeight;
@@ -87,7 +88,7 @@ export default function ScrollWatcher(props) {
         }
       `}</style>
       <div id={elementId} className="scroll-watcher">
-        {props.children}
+        {children}
       </div>
     </>
   );

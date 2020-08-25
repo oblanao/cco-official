@@ -13,10 +13,6 @@ export default function HomeThird(props) {
     document.querySelector(elementId).style.transform =
       "translateY(" + scrollY * 0.75 + "px)";
   };
-  const handleCounterEnter = (elementId, scrollY, speed) => {
-    // document.querySelector(elementId).style.opacity = scrollY;
-    setTimeout(() => setCounterAnimation(true), 550);
-  };
 
   const [aboutButtonAnimation, setAboutButtonAnimation] = useState(false);
   // const updateTextRule = (elementId, scrollY, speed) => {
@@ -90,10 +86,6 @@ export default function HomeThird(props) {
                 }
               />
             </FadeWithScroll>
-            <ScrollWatcher
-              id="about-counters"
-              onEnter={handleCounterEnter}
-            ></ScrollWatcher>
           </div>
           <ScrollWatcher
             id="about-button"
