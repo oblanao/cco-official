@@ -6,7 +6,11 @@ export default function Test() {
   return (
     <>
       {/* <RandomizerToLetter id="1" text="50" /> */}
-      <SimpleTextReveal text={"Chess Coders brings you money"} />
+      <SimpleTextReveal
+        duration={1000}
+        delay={200}
+        text={"Chess Coders brings you money"}
+      />
     </>
   );
 }

@@ -1,4 +1,8 @@
 export default function SimpleTextReveal(props) {
+  const color = props.color || "white";
+  const animationDuration =
+    (props.duration && `${props.duration / 1000}s`) || "2s";
+  const animationDelay = (props.delay && `${props.delay / 1000}s`) || "0s";
   return (
     <>
       <style jsx>{`
@@ -11,6 +15,7 @@ export default function SimpleTextReveal(props) {
         h1 {
           font-size: 3em;
           font-weight: normal;
+          margin: 0;
         }
 
         /* title styles */
@@ -28,8 +33,9 @@ export default function SimpleTextReveal(props) {
           right: 0;
           width: 100%;
           height: 100%;
-          background: white;
-          animation: a-ltr-after 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+          background: ${color};
+          animation: a-ltr-after ${animationDuration}
+            cubic-bezier(0.77, 0, 0.18, 1) forwards;
           transform: translateX(-101%);
         }
 
@@ -40,21 +46,16 @@ export default function SimpleTextReveal(props) {
           right: 0;
           width: 100%;
           height: 100%;
-          background: white;
-          animation: a-ltr-before 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+          background: ${color};
+          animation: a-ltr-before ${animationDuration}
+            cubic-bezier(0.77, 0, 0.18, 1) forwards;
           transform: translateX(0);
         }
 
         .home-title span:nth-of-type(1)::before,
         .home-title span:nth-of-type(1)::after {
-          animation-delay: 0s;
+          animation-delay: ${animationDelay};
         }
-
-        .home-title span:nth-of-type(2)::before,
-        .home-title span:nth-of-type(2)::after {
-          animation-delay: 0.5s;
-        }
-
         @keyframes a-ltr-after {
           0% {
             transform: translateX(-100%);
