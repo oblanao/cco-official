@@ -1,6 +1,7 @@
 import FadeWithScroll from "./HOC/FadeWithScroll";
 import RandomizerToLetter from "./TextEffects/RandomizerToLetter";
 import SimpleTextReveal from "./TextEffects/SimpleTextReveal";
+import UnderlineText from "./TextEffects/UnderlineText";
 
 export default function Test() {
   return (
@@ -11,6 +12,9 @@ export default function Test() {
         delay={200}
         text={"Chess Coders brings you money"}
       />
+      <p>
+        Haules balaules <UnderlineText text="haules baules" />
+      </p>
     </>
   );
 }

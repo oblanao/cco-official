@@ -305,3 +305,28 @@ body.nav-active .svg__cta {
 .crazy-border:hover .crazy-border-last-line::after {
   left: calc(50% + 5px);
 }
+strong.underline-text {
+  position: relative;
+}
+strong.underline-text::after {
+  content: "";
+  position: absolute;
+  bottom: -0.125rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  height: 0.75rem;
+  z-index: -1;
+  background-image: url("/images/underline.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p > strong.underline-text {
+  font-weight: 400;
+}
+p > strong.underline-text::after {
+  bottom: -0.2rem;
+  height: 0.5rem;
+  left: -0.25rem;
+  right: -0.25rem;
+}
