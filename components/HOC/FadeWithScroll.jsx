@@ -17,7 +17,6 @@ export default function FadeWithScroll(props) {
     const screenWidth = window.innerWidth;
     const minWidth = 600;
     if (screenWidth > minWidth) {
-      console.log("setting to true");
       setAnimation(true);
     }
   }, [props.noMobile]);

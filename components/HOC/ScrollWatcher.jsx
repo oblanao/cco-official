@@ -3,6 +3,33 @@ import { useEffect, useState } from "react";
 export default function ScrollWatcher(props) {
   const { children, id, targetSelector } = props;
   const elementId = id;
+  const debug = elementId === "website-header";
+
+  const elTopInViewport = () => {
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const el = document.getElementById(elementId);
+    const rect = el.getBoundingClientRect();
+    if (debug) {
+      console.log("rect.top > 0 (", rect.top, " > 0) ? ", rect.top > 0);
+      console.log(
+        "rect.top < windowHeight (",
+        rect.top,
+        " < ",
+        windowHeight,
+        ") ? ",
+        rect.top < windowHeight
+      );
+    }
+    return rect.top > 0 && rect.top < windowHeight;
+  };
+  const elBottomInViewport = () => {
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const el = document.getElementById(elementId);
+    const rect = el.getBoundingClientRect();
+    return rect.bottom > 0 && rect.bottom < windowHeight;
+  };
   const elInViewport = () => {
     const windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
@@ -12,6 +39,11 @@ export default function ScrollWatcher(props) {
       rect.top >= -rect.height && rect.bottom <= windowHeight + rect.height
     );
   };
+  const getInViewport = () =>
+    Number(localStorage.getItem(`inViewport-${elementId}`));
+  const setInViewport = (val) =>
+    localStorage.setItem(`inViewport-${elementId}`, Number(val));
+
   useEffect(() => {
     var checkScrollSpeed = (function (settings) {
       settings = settings || {};
@@ -41,11 +73,20 @@ export default function ScrollWatcher(props) {
         return delta;
       };
     })();
+    const inViewPortCheck = props.watchTop
+      ? elTopInViewport
+      : props.watchBottom
+      ? elBottomInViewport
+      : elInViewport;
     const watchScroll = () => {
-      if (elInViewport()) {
-        if (typeof props.onEnter === "function") {
-          props.onEnter(elementId);
-          console.log("element ", elementId, " has entered");
+      const inViewport = getInViewport();
+      if (inViewPortCheck()) {
+        if (!inViewport) {
+          setInViewport(true);
+          if (debug) console.log("element ", elementId, " has entered");
+          if (typeof props.onEnter === "function") {
+            props.onEnter(elementId);
+          }
         }
         const windowHeight =
           window.innerHeight || document.documentElement.clientHeight;
@@ -64,6 +105,14 @@ export default function ScrollWatcher(props) {
             scrollSpeed
           );
         }
+      } else {
+        if (inViewport) {
+          setInViewport(false);
+          if (typeof props.onExit === "function") {
+            props.onExit(elementId);
+            if (debug) console.log("element ", elementId, "has exit");
+          }
+        }
       }
     };
     watchScroll();
@@ -71,22 +120,18 @@ export default function ScrollWatcher(props) {
       document
         .querySelector(".fullscreen-wrapper")
         .addEventListener("scroll", watchScroll);
-      window.addEventListener("scroll", watchScroll);
+      window.addEventListener("scroll", () => watchScroll(inViewport));
     };
     scrollListener();
     return () => {
       document
         .querySelector(".fullscreen-wrapper")
         .removeEventListener("scroll", watchScroll);
-      window.removeEventListener("scroll", watchScroll);
+      window.removeEventListener("scroll", () => watchScroll(inViewport));
     };
   }, []);
   return (
     <>
-      <style jsx>{`
-        .scroll-watcher {
-        }
-      `}</style>
       <div id={elementId} className="scroll-watcher">
         {children}
       </div>

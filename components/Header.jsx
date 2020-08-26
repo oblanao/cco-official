@@ -1,4 +1,5 @@
 import WebsiteMenu from "./Menu";
+import ScrollWatcher from "./HOC/ScrollWatcher";
 
 export default function Header(props) {
   //TODO: de cacat animatia la buton, in primul rand nu ramane opacity-0 nu stiu de ce pula mea
@@ -80,12 +81,47 @@ export default function Header(props) {
           justify-content: flex-end;
         }
 
+        header.header-floating {
+          position: fixed;
+          overflow: hidden;
+          opacity: 0.9;
+          top: 20px;
+          height: calc(64px + 1rem);
+
+          width: calc(100% - 40px);
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+          -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+          box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+          z-index: 12491241241;
+        }
+
+        header.header-open {
+          animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+          from {
+            height: 0;
+            opacity: 0;
+          }
+          to {
+            height: calc(64px + 1rem);
+            opacity: 0.9;
+          }
+        }
         @media (max-width: 576px) {
           header {
             padding: 0.5rem;
           }
+          header.header-floating {
+            top: 0.5rem;
+            width: calc(100% - 1rem);
+          }
         }
       `}</style>
+
       <header>
         <div className="header-left after-intro opacity-0">
           <img src="/images/logo-color-64.png" alt="logo-cco" height="64" />
@@ -95,6 +131,7 @@ export default function Header(props) {
           <WebsiteMenu handleClick={onMenuClick} />
         </div>
       </header>
+
       {/* <div className="header__navigation">
         <Fullscreen>
           <div className="menu__full">

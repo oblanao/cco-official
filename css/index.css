@@ -84,6 +84,9 @@ body {
   background: #f2f2f2;
   letter-spacing: 0.25rem;
 }
+.fullscreen-wrapper.header-padding {
+  padding-top: 83px;
+}
 
 .content h2 {
   font-size: 4rem;
@@ -327,4 +330,11 @@ p > strong.underline-text::after {
 
 .portfolio__inner {
   width: 100%;
+}
+header.header-floating {
+  transition: opacity 0s 0.75s ease-in;
+}
+body.nav-active header.header-floating {
+  opacity: 1;
+  transition: opacity 0s 0s ease-in;
 }

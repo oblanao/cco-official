@@ -4,7 +4,6 @@ import CircleCTA from "./CircleCTA";
 export default function WebsiteMenu(props) {
   const [windowHeight, setHeight] = useState(0);
   useEffect(() => {
-    console.log("height is ", window.innerHeight);
     setHeight(window.innerHeight);
     var app = function () {
       var body = undefined;

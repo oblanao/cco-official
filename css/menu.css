@@ -239,16 +239,19 @@ a.effect-underline:hover:after {
   transition: opacity 0.2s ease-in;
   transition-delay: 0.5s;
 }
+header.header-floating .menu-logo {
+  top: calc(20px + 0.5rem);
+}
 body.nav-active .menu-logo {
   opacity: 1;
 }
 
 @media (max-width: 576px) {
-  .menu-logo {
+  .menu-logo,
+  header.header-floating .menu-logo {
     top: 16px;
     left: 16px;
   }
-
   .nav__list-item {
     font-size: 5vh;
   }

@@ -18,6 +18,35 @@ export default function MainPage(props) {
       }
     }
   });
+  const onHeaderExit = (headerId) => {
+    console.log("exit");
+    const headerEl = document.getElementById(headerId).querySelector("header");
+    const contentEl = document.querySelector(".fullscreen-wrapper");
+
+    console.log("onExit");
+    headerEl.classList.add("header-floating");
+    contentEl.classList.add("header-padding");
+    headerEl.classList.remove("header-closed");
+    headerEl.classList.add("header-open");
+    contentEl.addEventListener("scroll", () => {
+      if (contentEl.scrollTop === 0) {
+        onHeaderEnter(headerId);
+      }
+    });
+  };
+  const onHeaderEnter = (headerId) => {
+    const headerEl = document.getElementById(headerId).querySelector("header");
+    const contentEl = document.querySelector(".fullscreen-wrapper");
+    headerEl.classList.remove("header-floating");
+    contentEl.classList.remove("header-padding");
+    headerEl.classList.add("header-closed");
+    headerEl.classList.remove("header-open");
+    contentEl.removeEventListener("scroll", () => {
+      if (contentEl.scrollTop === 83) {
+        onHeaderEnter(headerId);
+      }
+    });
+  };
   const updatePortfolioSection = (elementId, scrollY, speed) => {
     console.log(scrollY);
     const el = document.querySelector(".content-fourth");
@@ -49,7 +78,9 @@ export default function MainPage(props) {
       `}</style>
       <Fullscreen>
         <div className="main-page">
-          <Header withAnimation={props.withAnimation} />
+          <ScrollWatcher id="website-header" onExit={onHeaderExit} watchBottom>
+            <Header withAnimation={props.withAnimation} />
+          </ScrollWatcher>
           <HomeLanding withAnimation={props.withAnimation} />
           <HomeThird withAnimation={props.withAnimation} />
           <HomeSecond withAnimation={props.withAnimation} />

@@ -74,6 +74,9 @@ export default function WebsiteHome(props) {
         .disable-hover * {
           pointer-events: none !important;
         }
+        body.disable-hover header {
+          pointer-events: inherit;
+        }
         .main,
         .outer-wrapper {
           left: 0;
