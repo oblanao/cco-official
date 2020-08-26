@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MainPage } from ".";
 import { addClass, removeClass } from "../helpers/functions";
 import Intro from "./Intro";
+import { disableHoverOnScrollDebounce } from "../site.config";
 
 export default function WebsiteHome(props) {
   const { debug, showIntro } = props;
@@ -61,7 +62,7 @@ export default function WebsiteHome(props) {
 
         timer = setTimeout(function () {
           body.classList.remove("disable-hover");
-        }, 250);
+        }, disableHoverOnScrollDebounce);
       },
       false
     );
