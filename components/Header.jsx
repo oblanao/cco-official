@@ -1,5 +1,5 @@
 import WebsiteMenu from "./Menu";
-import ScrollWatcher from "./HOC/ScrollWatcher";
+import config from "../site.config";
 
 export default function Header(props) {
   //TODO: de cacat animatia la buton, in primul rand nu ramane opacity-0 nu stiu de ce pula mea
@@ -20,7 +20,7 @@ export default function Header(props) {
     <>
       <style jsx>{`
         header {
-          background: #f2f2f2;
+          background: ${config.colors.landing.bg};
           padding: 20px;
           display: flex;
           align-items: center;

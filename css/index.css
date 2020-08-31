@@ -80,8 +80,8 @@ body {
   align-items: center;
 }
 .content-landing {
-  flex-direction: column;
   background: #f2f2f2;
+  flex-direction: column;
   letter-spacing: 0.25rem;
 }
 .fullscreen-wrapper.header-padding {
@@ -180,7 +180,7 @@ body.nav-active .svg__cta {
 }
 .content-third,
 .content-fourth {
-  background: black;
+  background: #484842;
 
   color: white;
   padding: 7.5rem 1rem;
@@ -188,6 +188,9 @@ body.nav-active .svg__cta {
   align-items: flex-start;
   position: relative;
   transition: all 0.5s ease-in;
+}
+.content-third {
+  background-color: #0f4d81;
 }
 
 .content-third .content-section__inner,
@@ -197,14 +200,17 @@ body.nav-active .svg__cta {
   max-width: 1000px;
   line-height: 2rem;
 }
+
 .content-third .about-title,
 .work-title {
   text-align: center;
 }
+
 .content-third .about-text {
   transition: all 0.3s ease-in;
   margin-bottom: 5rem;
 }
+
 .floating-logo {
   position: absolute;
   /* bottom: -128px; */
@@ -212,6 +218,7 @@ body.nav-active .svg__cta {
   opacity: 0.6;
   transition: all 0.3s ease;
 }
+
 .floating-icon {
   position: absolute;
   top: -128px;
@@ -222,6 +229,7 @@ body.nav-active .svg__cta {
   opacity: 0;
   width: 256px;
 }
+
 @media (max-width: 991px) {
   .svg__cta {
     display: none;
@@ -260,6 +268,7 @@ body.nav-active .svg__cta {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
 .crazy-border::before,
 .crazy-border::after {
   content: "";
@@ -271,6 +280,7 @@ body.nav-active .svg__cta {
   background: #6d0300;
   transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
 }
+
 .crazy-border::before {
   right: calc(100% - 15px);
 }
@@ -341,4 +351,52 @@ header.header-floating {
 body.nav-active header.header-floating {
   opacity: 1;
   transition: opacity 0s 0s ease-in;
+}
+@keyframes DASH3 {
+  0% {
+    stroke-dashoffset: 800;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+@-webkit-keyframes DASH3 {
+  0% {
+    stroke-dashoffset: 800;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+@-moz-keyframes DASH3 {
+  0% {
+    stroke-dashoffset: 800;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+.content.full-screen {
+  min-height: calc(100vh - 64px - 5rem);
+}
+@media (max-width: 491px) {
+  .content.full-screen {
+    min-height: calc(100vh - 64px - 2rem);
+  }
 }

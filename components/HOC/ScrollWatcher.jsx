@@ -78,8 +78,8 @@ export default function ScrollWatcher(props) {
       : props.watchBottom
       ? elBottomInViewport
       : elInViewport;
+    const inViewport = getInViewport();
     const watchScroll = () => {
-      const inViewport = getInViewport();
       if (inViewPortCheck()) {
         if (!inViewport) {
           setInViewport(true);

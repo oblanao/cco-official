@@ -1,44 +1,27 @@
 import ClassWithScroll from "./HOC/ClassWithScroll";
 import FadeWithScroll from "./HOC/FadeWithScroll";
-import FullScreenContent from "./HOC/FullScreenContent";
 import DoubleBorderButton from "./Buttons/DoubleBorder";
 import ScrollWatcher from "./HOC/ScrollWatcher";
 import { useState } from "react";
-import RandomizerToLetter from "./TextEffects/RandomizerToLetter";
 import TextWithIcon from "./HOC/TextWithIcon";
+import config from "../site.config";
 
 export default function HomeAboutUs(props) {
-  const [counterAnimation, setCounterAnimation] = useState(false);
   const updateTitleRule = (elementId, scrollY, speed) => {
     document.querySelector(elementId).style.transform =
       "translateY(" + scrollY * 1.25 + "px)";
   };
 
   const [aboutButtonAnimation, setAboutButtonAnimation] = useState(false);
-  // const updateTextRule = (elementId, scrollY, speed) => {
-  //   let scaleValue = 100 / scrollY;
-  //   if (scaleValue > 1.2) {
-  //     scaleValue = 1.2;
-  //   }
-  //   document.getElementById(elementId).style.transform =
-  //     "scale(" + scaleValue + ")";
-  // };
   return (
     <>
-      <style jsx>{``}</style>
-      {/* <div className="content content-third full-screen"> */}
-      <FullScreenContent className="content-third">
-        {/* <FadeWithScroll
-          id="chip-icon"
-          targetSelector=".floating-icon"
-          topValue={0.5}
-        >
-          <img
-            src="/images/icons/chip-half.png"
-            alt="floating-brain-icon"
-            className="floating-icon after-intro opacity-0"
-          />
-        </FadeWithScroll> */}
+      <style jsx>{`
+        .content-third {
+          background: ${config.colors.aboutUs.bg};
+          color: ${config.colors.aboutUs.fg};
+        }
+      `}</style>
+      <div className="full-screen content content-third">
         <div className="content-section__inner">
           <ClassWithScroll
             id="about-title"
@@ -98,10 +81,8 @@ export default function HomeAboutUs(props) {
               startAnimation={aboutButtonAnimation}
             />
           </ScrollWatcher>
-          {/* </ClassWithScroll> */}
-          {/* </div> */}
         </div>
-      </FullScreenContent>
+      </div>
     </>
   );
 }

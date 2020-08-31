@@ -82,13 +82,8 @@ export default function MainPage(props) {
           <HomeLanding withAnimation={props.withAnimation} />
           <HomeAboutUs withAnimation={props.withAnimation} />
           <HomeServices withAnimation={props.withAnimation} />
-          {/* <ScrollWatcher
-            id="portfolio-section"
-            targetSelector=".content-fourth"
-            onViewportScroll={updatePortfolioSection}
-          > */}
+
           <HomePortfolio withAnimation={props.withAnimation} />
-          {/* </ScrollWatcher> */}
         </div>
       </Fullscreen>
     </>

@@ -21,7 +21,7 @@ export default function BlackMiddleLine(props) {
       setTimeout(() => lineEl.classList.add("animated"), 250);
     }, delay);
   };
-  const blakckLineBgColor = props.bgColor || "white";
+  const blakckLineBgColor = props.bgColor || "black";
   return (
     <>
       <style jsx>{`
@@ -33,60 +33,17 @@ export default function BlackMiddleLine(props) {
           cursor: ${props.onClick ? "pointer" : "normal"};
           padding: 1rem;
           position: relative;
-           {
-            /* margin: auto 1rem; */
-          }
           transition: opacity 0.75s ease-in;
-           {
-            /* min-width: 300px; */
-          }
         }
-         {
-          /* .black-middle-line__container::before,
-        .black-middle-line__container::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: #6d0300;
-          transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
-        }
-        .black-middle-line__container::before {
-          right: calc(100% - 15px);
-        }
-        .black-middle-line__container::after {
-          left: calc(100% - 15px);
-        } */
-        }
-         {
-          /* .last-line::before,
-        .last-line::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: #6d0300;
-          transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1) 50ms;
-        }
-        .last-line::before {
-          right: calc(100% - 15px);
-        }
-        .last-line::after {
-          left: calc(100% - 15px);
-        } */
-        }
+
         .black-middle-line__container > div {
           text-align: center;
         }
         .black-line > div {
           background: linear-gradient(
             to right,
-            black 50%,
-            ${blakckLineBgColor} 50%
+            ${blakckLineBgColor} 50%,
+            transparent 50%
           );
           background-size: 200% 100%;
           background-position: 90% 0%;

@@ -4,6 +4,7 @@ import FadeWithScroll from "./HOC/FadeWithScroll";
 import AnimatedBlackMiddleLine from "./TextEffects/AnimatedBlackMiddleLine";
 import CrazyBorder from "./HOC/CrazyBorder";
 import ClassWithScroll from "./HOC/ClassWithScroll";
+import config from "../site.config";
 
 export default function HomeServices(props) {
   const [isVisible, setVisible] = useState(false);
@@ -15,11 +16,6 @@ export default function HomeServices(props) {
     if (scrollY < 65) {
       return (document.querySelector(elementId).style.transform = "scale(1)");
     }
-    // la 104 intra
-    // la 85 incepe black line
-    // la 75 continua black line
-    // la 69 continua
-    // la 65 e plina black line
     const scrollValues = {
       atEnter: 104,
       atFull: 65,
@@ -31,10 +27,7 @@ export default function HomeServices(props) {
     const newScale =
       scaleValues.atEnter / 100 -
       ((scrollValues.atFull / scrollY) * scaleValues.atFull) / 100;
-    // let scale = scrollY / 100 + 1;
-    // if (scale < 1) {
-    //   scale = 1;
-    // }
+
     document.querySelector(elementId).style.transform =
       "scale(" + newScale + ")";
   };
@@ -42,7 +35,8 @@ export default function HomeServices(props) {
     <>
       <style jsx>{`
         .content-home-second {
-          background: #f2f2f2;
+          background: ${config.colors.ourServices.bg};
+          color: ${config.colors.ourServices.fg};
           flex-direction: column;
           padding: 5rem 1rem;
           padding-bottom: 150px;
@@ -90,9 +84,11 @@ export default function HomeServices(props) {
               updateRule={updateServicesIcon}
               targetSelector="img"
             >
-              <img src="/images/icons/apps-black.png" width="80px" />
+              <img src="/images/icons/apps-blue.png" width="80px" />
             </ClassWithScroll>
             <AnimatedBlackMiddleLine
+              textColor={"#000060"}
+              bgColor="#000060"
               // firstLine={}
               id="first-blackMiddle"
               blackLine="Develop"
@@ -106,9 +102,11 @@ export default function HomeServices(props) {
               updateRule={updateServicesIcon}
               targetSelector="img"
             >
-              <img src="/images/icons/web-black.png" width="80px" />
+              <img src="/images/icons/web-blue.png" width="80px" />
             </ClassWithScroll>
             <AnimatedBlackMiddleLine
+              textColor={"#000060"}
+              bgColor="#000060"
               id="second-blackMiddle"
               blackLine="Design"
               lastLine="Websites"
@@ -122,9 +120,11 @@ export default function HomeServices(props) {
               updateRule={updateServicesIcon}
               targetSelector="img"
             >
-              <img src="/images/icons/future-black.png" width="80px" />
+              <img src="/images/icons/future-blue.png" width="80px" />
             </ClassWithScroll>
             <AnimatedBlackMiddleLine
+              textColor={"#000060"}
+              bgColor="#000060"
               id="third-blackMiddle"
               blackLine="Build"
               lastLine="The Future"
