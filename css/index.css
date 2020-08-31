@@ -169,7 +169,11 @@ body {
     transform: rotate(0);
   }
 }
+body:not(.nav-active) .svg__cta {
+  display: none;
+}
 body.nav-active .svg__cta {
+  display: block;
   opacity: 1;
   transition: opacity 1s ease-in;
   transition-delay: 1s;

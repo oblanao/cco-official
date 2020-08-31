@@ -5,7 +5,7 @@ import AnimatedBlackMiddleLine from "./TextEffects/AnimatedBlackMiddleLine";
 import CrazyBorder from "./HOC/CrazyBorder";
 import ClassWithScroll from "./HOC/ClassWithScroll";
 
-export default function HomeSecond(props) {
+export default function HomeServices(props) {
   const [isVisible, setVisible] = useState(false);
 
   const handleServiceTitleEnter = () => {
@@ -31,7 +31,6 @@ export default function HomeSecond(props) {
     const newScale =
       scaleValues.atEnter / 100 -
       ((scrollValues.atFull / scrollY) * scaleValues.atFull) / 100;
-    console.log("at scrollY ", scrollY, " newScale ", newScale);
     // let scale = scrollY / 100 + 1;
     // if (scale < 1) {
     //   scale = 1;

@@ -110,7 +110,6 @@ export default function ScrollWatcher(props) {
           setInViewport(false);
           if (typeof props.onExit === "function") {
             props.onExit(elementId);
-            if (debug) console.log("element ", elementId, "has exit");
           }
         }
       }

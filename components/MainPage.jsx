@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Fullscreen, Header } from ".";
 import HomeLanding from "./HomeLanding";
-import HomeSecond from "./HomeSecond";
-import HomeThird from "./HomeThird";
-import HomeFourth from "./HomeFourth";
+import HomeServices from "./HomeServices";
+import HomeAboutUs from "./HomeAboutUs";
+import HomePortfolio from "./HomePortfolio";
 import ScrollWatcher from "./HOC/ScrollWatcher";
 
 export default function MainPage(props) {
@@ -19,11 +19,9 @@ export default function MainPage(props) {
     }
   });
   const onHeaderExit = (headerId) => {
-    console.log("exit");
     const headerEl = document.getElementById(headerId).querySelector("header");
     const contentEl = document.querySelector(".fullscreen-wrapper");
 
-    console.log("onExit");
     headerEl.classList.add("header-floating");
     contentEl.classList.add("header-padding");
     headerEl.classList.remove("header-closed");
@@ -82,14 +80,14 @@ export default function MainPage(props) {
             <Header withAnimation={props.withAnimation} />
           </ScrollWatcher>
           <HomeLanding withAnimation={props.withAnimation} />
-          <HomeThird withAnimation={props.withAnimation} />
-          <HomeSecond withAnimation={props.withAnimation} />
+          <HomeAboutUs withAnimation={props.withAnimation} />
+          <HomeServices withAnimation={props.withAnimation} />
           {/* <ScrollWatcher
             id="portfolio-section"
             targetSelector=".content-fourth"
             onViewportScroll={updatePortfolioSection}
           > */}
-          <HomeFourth withAnimation={props.withAnimation} />
+          <HomePortfolio withAnimation={props.withAnimation} />
           {/* </ScrollWatcher> */}
         </div>
       </Fullscreen>

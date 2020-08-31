@@ -7,7 +7,7 @@ import { useState } from "react";
 import RandomizerToLetter from "./TextEffects/RandomizerToLetter";
 import TextWithIcon from "./HOC/TextWithIcon";
 
-export default function HomeThird(props) {
+export default function HomeAboutUs(props) {
   const [counterAnimation, setCounterAnimation] = useState(false);
   const updateTitleRule = (elementId, scrollY, speed) => {
     document.querySelector(elementId).style.transform =

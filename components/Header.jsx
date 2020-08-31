@@ -10,15 +10,10 @@ export default function Header(props) {
   // console.log("is menu open ", menuOpen);
   const animated = !!props.withAnimation;
   const onMenuClick = () => {
-    console.log("click");
     if (isNavActive()) {
-      console.log("menu is open");
       document.body.classList.remove("nav-active");
-      // setMenuOpen(false);
     } else {
-      console.log("menu not open");
       document.body.classList.add("nav-active");
-      // setMenuOpen(true);
     }
   };
   return (
@@ -84,10 +79,10 @@ export default function Header(props) {
         header.header-floating {
           position: fixed;
           overflow: hidden;
-          opacity: 0.9;
+          opacity: 1;
           top: 20px;
           height: calc(64px + 1rem);
-
+          background: rgba(242, 242, 242, 0.9);
           width: calc(100% - 40px);
           padding-top: 0.5rem;
           padding-bottom: 0.5rem;
@@ -131,14 +126,6 @@ export default function Header(props) {
           <WebsiteMenu handleClick={onMenuClick} />
         </div>
       </header>
-
-      {/* <div className="header__navigation">
-        <Fullscreen>
-          <div className="menu__full">
-            <div className="menu__content"></div>
-          </div>
-        </Fullscreen>
-      </div> */}
     </>
   );
 }

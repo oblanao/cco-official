@@ -8,7 +8,7 @@ import ExpandingPortfolio from "./ImageEffects/ExpandingPortfolio";
 import DoubleBorderButton from "./Buttons/DoubleBorder";
 import FadeWithScroll from "./HOC/FadeWithScroll";
 
-export default function HomeFourth(props) {
+export default function HomePortfolio(props) {
   const [workButtonAnimation, setWorkButtonAnimation] = useState(false);
 
   const updateTitleRule = (elementId, scrollY, speed) => {
